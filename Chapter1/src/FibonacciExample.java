@@ -1,0 +1,49 @@
+
+public class FibonacciExample {
+
+	public static void main(String[] args) {
+		// Example usage
+		int n = 10;
+
+		// Iterative approach
+		System.out.println("Fibonacci sequence (Iterative):");
+		for (int i = 0; i < n; i++) {
+			System.out.print(fibonacciIterative(i) + " ");
+		}
+
+		System.out.println(); // Newline for better readability
+
+		// Recursive approach
+		System.out.println("Fibonacci sequence (Recursive):");
+		for (int i = 0; i < n; i++) {
+			System.out.print(fibonacciRecursive(i) + " ");
+		}
+	}
+
+	// Iterative approach to calculate the nth Fibonacci number
+	private static int fibonacciIterative(int n) {
+		if (n <= 1) {
+			return n;
+		}
+
+		int prev = 0;
+		int current = 1;
+
+		for (int i = 2; i <= n; i++) {
+			int next = prev + current;
+			prev = current;
+			current = next;
+		}
+
+		return current;
+	}
+
+	// Recursive approach to calculate the nth Fibonacci number
+	private static int fibonacciRecursive(int n) {
+		if (n <= 1) {
+			return n;
+		}
+
+		return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+	}
+}
