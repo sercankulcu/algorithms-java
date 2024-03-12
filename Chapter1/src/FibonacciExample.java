@@ -3,21 +3,30 @@ public class FibonacciExample {
 
 	public static void main(String[] args) {
 		// Example usage
-		int n = 10;
+		int n = 45;
 
+		long startTime = System.currentTimeMillis();
 		// Iterative approach
 		System.out.println("Fibonacci sequence (Iterative):");
 		for (int i = 0; i < n; i++) {
 			System.out.print(fibonacciIterative(i) + " ");
 		}
-
+		long endTime = System.currentTimeMillis();
+		long elapsedTime = endTime - startTime;
+		System.out.println();
+		System.out.println("Elapsed Time: " + elapsedTime + " milliseconds");
 		System.out.println(); // Newline for better readability
 
+		startTime = System.currentTimeMillis();
 		// Recursive approach
 		System.out.println("Fibonacci sequence (Recursive):");
 		for (int i = 0; i < n; i++) {
 			System.out.print(fibonacciRecursive(i) + " ");
 		}
+		endTime = System.currentTimeMillis();
+		elapsedTime = endTime - startTime;
+		System.out.println();
+		System.out.println("Elapsed Time: " + elapsedTime + " milliseconds");
 	}
 
 	// Iterative approach to calculate the nth Fibonacci number
@@ -43,7 +52,6 @@ public class FibonacciExample {
 		if (n <= 1) {
 			return n;
 		}
-
 		return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
 	}
 }
