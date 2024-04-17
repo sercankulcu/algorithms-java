@@ -1,5 +1,5 @@
 
-public class BinarySearchExample {
+public class BinarySearch {
 
 	// Function to perform binary search
 	public static int binarySearch(int[] array, int target) {

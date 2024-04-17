@@ -1,5 +1,5 @@
 
-public class LinearSearchExample {
+public class LinearSearch {
 
 	// Function to perform linear search
 	public static int linearSearch(int[] array, int target) {
