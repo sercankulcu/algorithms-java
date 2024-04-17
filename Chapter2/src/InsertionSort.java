@@ -1,5 +1,5 @@
 
-public class InsertionSortExample {
+public class InsertionSort {
 
 	public static void main(String[] args) {
 		// Test the Insertion Sort algorithm with an example array

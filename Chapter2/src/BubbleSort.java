@@ -1,22 +1,22 @@
 import java.util.Random;
 
-public class BubbleSortExample {
+public class BubbleSort {
 
 	public static void main(String[] args) {
 		// Test the Bubble Sort algorithm with an example array
 		Random random = new Random();
-		int[] array = new int[40000];
+		int[] array = new int[10];
 		for (int i = 0; i < array.length; i++) {
 			array[i] = random.nextInt(1000); // Adjust the bound as needed
 		}
-		//System.out.println("Original Array: " + arrayToString(array));
+		System.out.println("Original Array: " + arrayToString(array));
 
 		long startTime = System.currentTimeMillis();
 		bubbleSort(array);
 		long endTime = System.currentTimeMillis();
 		long elapsedTime = endTime - startTime;
 		System.out.println("Elapsed Time: " + elapsedTime + " milliseconds");
-		//System.out.println("Sorted Array: " + arrayToString(array));
+		System.out.println("Sorted Array: " + arrayToString(array));
 	}
 
 	// Function to perform the Bubble Sort algorithm

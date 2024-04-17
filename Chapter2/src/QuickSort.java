@@ -1,5 +1,5 @@
 
-public class QuickSortExample {
+public class QuickSort {
 
 	public static void main(String[] args) {
 		// Test the QuickSort algorithm with an example array

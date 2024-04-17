@@ -1,5 +1,5 @@
 
-public class MergeSortExample {
+public class MergeSort {
 
 	public static void main(String[] args) {
 		// Test the Merge Sort algorithm with an example array
