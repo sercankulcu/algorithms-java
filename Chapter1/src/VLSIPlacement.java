@@ -5,7 +5,7 @@ public class VLSIPlacement {
 
 	public static void main(String[] args) {
 		// Example usage
-		int[] modules = {8, 4, 2, 6, 10, 5, 1, 7, 3, 9};
+		int[] modules = {8, 4, 2, 6, 10, 5, 1, 7, 3, 9, 11};
 		int[] placement = partitionBasedPlacement(modules);
 
 		System.out.println("Original Modules: " + Arrays.toString(modules));

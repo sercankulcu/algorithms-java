@@ -1,5 +1,9 @@
+import java.util.Random;
 
 public class ElapsedTimeExampleNano {
+	
+	final static int SIZE = 100000000;
+	static Random random = new Random();
 
 	public static void main(String[] args) {
 		// Record the start time
@@ -18,8 +22,8 @@ public class ElapsedTimeExampleNano {
 
 	private static void performTask() {
 		// Simulate some task
-		for (int i = 0; i < 1000000; i++) {
-			// Some operation
+		for (int i = 0; i < SIZE; i++) {
+			random.nextInt(100); // Adjust the bound as needed
 		}
 	}
 }

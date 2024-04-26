@@ -2,7 +2,7 @@
 public class FibonacciExample {
 
 	public static void main(String[] args) {
-		// Example usage
+
 		int n = 45;
 
 		long startTime = System.currentTimeMillis();
@@ -15,7 +15,6 @@ public class FibonacciExample {
 		long elapsedTime = endTime - startTime;
 		System.out.println();
 		System.out.println("Elapsed Time: " + elapsedTime + " milliseconds");
-		System.out.println(); // Newline for better readability
 
 		startTime = System.currentTimeMillis();
 		// Recursive approach

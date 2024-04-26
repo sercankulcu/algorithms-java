@@ -4,7 +4,7 @@ public class PowerExample {
 	public static void main(String[] args) {
 		// Example usage
 		int base = 2;
-		int exponent = 5;
+		int exponent = 62;
 
 		// Iterative approach
 		long iterativeResult = powerIterative(base, exponent);

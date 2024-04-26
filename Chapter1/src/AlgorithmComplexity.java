@@ -1,6 +1,8 @@
 import java.util.Random;
 
 public class AlgorithmComplexity {
+	
+	final static int SIZE = 100000000;
 
 	public static int linearSearch(int[] array, int target) {
 		for (int i = 0; i < array.length; i++) {
@@ -13,11 +15,11 @@ public class AlgorithmComplexity {
 
 	public static void main(String[] args) {
 		Random random = new Random();
-		int[] array = new int[100000000];
+		int[] array = new int[SIZE];
 		for (int i = 0; i < array.length; i++) {
-			array[i] = random.nextInt(1000); // Adjust the bound as needed
+			array[i] = random.nextInt(10000); // Adjust the bound as needed
 		}
-		int target = 1001;
+		int target = 10001;
 		long startTime = System.currentTimeMillis();
 		linearSearch(array, target);
 		long endTime = System.currentTimeMillis();
