@@ -2,8 +2,8 @@
 public class MergeSort {
 
 	public static void main(String[] args) {
-		// Test the Merge Sort algorithm with an example array
-		int[] array = {9, 7, 5, 11, 12, 2, 14, 3, 10, 6};
+
+		int[] array = {9, 7, 5, 11, 12, 2, 14, 3, 10, 6, 1, 4, 8, 7, 1, 2};
 		System.out.println("Original Array: " + arrayToString(array));
 
 		mergeSort(array, 0, array.length - 1);
@@ -23,6 +23,7 @@ public class MergeSort {
 
 			// Merge the sorted halves
 			merge(array, left, mid, right);
+			System.out.println("Array: " + arrayToString(array));
 		}
 	}
 

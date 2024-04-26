@@ -2,7 +2,8 @@
 public class RadixSort {
 
 	// Function to perform counting sort based on the digit represented by exp
-	private static void countingSort(int[] arr, int exp) {
+	private static int[] countingSort(int[] arr, int exp) {
+		
 		int n = arr.length;
 		int[] output = new int[n]; // Output array
 		int[] count = new int[10]; // Count array to store the count of each digit
@@ -21,19 +22,21 @@ public class RadixSort {
 			count[(arr[i] / exp) % 10]--;
 		}
 
-		// Copy the output array to arr[] so that arr[] now contains sorted numbers based on digit at exp
-		for (int i = 0; i < n; i++)
-			arr[i] = output[i];
+		return output;
 	}
 
 	// Function to perform radix sort
-	public static void radixSort(int[] arr) {
+	public static int[] radixSort(int[] arr) {
 		int max = getMax(arr); // Find the maximum number in the array
 
 		// Perform counting sort for every digit. Note that instead of passing digit number, exp is passed.
 		// exp is 10^i where i is the current digit being considered
-		for (int exp = 1; max / exp > 0; exp *= 10)
-			countingSort(arr, exp);
+		for (int exp = 1; max / exp > 0; exp *= 10) {
+			arr = countingSort(arr, exp);
+			printArray(arr);
+		}
+		
+		return arr;
 	}
 
 	// Function to find the maximum element in the array
@@ -55,11 +58,11 @@ public class RadixSort {
 
 	// Main method to test RadixSort class
 	public static void main(String[] args) {
-		int[] arr = {170, 45, 75, 90, 802, 24, 2, 66};
+		int[] arr = {170, 45, 75, 90, 802, 242, 222, 6622, 13, 23, 33};
 		System.out.println("Original array:");
 		printArray(arr);
 
-		radixSort(arr);
+		arr = radixSort(arr);
 
 		System.out.println("Sorted array:");
 		printArray(arr);

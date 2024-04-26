@@ -5,7 +5,7 @@ public class BubbleSort {
 	public static void main(String[] args) {
 		// Test the Bubble Sort algorithm with an example array
 		Random random = new Random();
-		int[] array = new int[10];
+		int[] array = new int[16];
 		for (int i = 0; i < array.length; i++) {
 			array[i] = random.nextInt(1000); // Adjust the bound as needed
 		}
@@ -33,6 +33,7 @@ public class BubbleSort {
 					// Swap elements if they are in the wrong order
 					swap(array, j, j + 1);
 					swapped = true;
+					System.out.println("Array: " + arrayToString(array));
 				}
 			}
 

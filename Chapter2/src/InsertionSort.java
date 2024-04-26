@@ -2,7 +2,7 @@
 public class InsertionSort {
 
 	public static void main(String[] args) {
-		// Test the Insertion Sort algorithm with an example array
+
 		int[] array = {9, 7, 5, 11, 12, 2, 14, 3, 10, 6};
 		System.out.println("Original Array: " + arrayToString(array));
 
@@ -27,6 +27,7 @@ public class InsertionSort {
 
 			// Place the key at its correct position
 			array[j + 1] = key;
+			System.out.println("Array: " + arrayToString(array));
 		}
 	}
 

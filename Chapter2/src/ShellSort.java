@@ -1,8 +1,8 @@
 
 public class ShellSort {
 
-	// Function to perform shell sort
 	public static void shellSort(int[] arr) {
+		
 		int n = arr.length;
 
 		// Start with a big gap, then reduce the gap
@@ -22,6 +22,8 @@ public class ShellSort {
 
 				// put temp (the original arr[i]) in its correct location
 				arr[j] = temp;
+				printArray(arr);
+
 			}
 		}
 	}
@@ -36,7 +38,7 @@ public class ShellSort {
 
 	// Main method to test ShellSort class
 	public static void main(String[] args) {
-		int[] arr = {12, 34, 54, 2, 3};
+		int[] arr = {64, 25, 12, 22, 11, 7, 6, 8};
 		System.out.println("Original array:");
 		printArray(arr);
 

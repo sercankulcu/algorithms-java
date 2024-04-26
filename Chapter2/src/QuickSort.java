@@ -2,8 +2,8 @@
 public class QuickSort {
 
 	public static void main(String[] args) {
-		// Test the QuickSort algorithm with an example array
-		int[] array = {9, 7, 5, 11, 12, 2, 14, 3, 10, 6};
+
+		int[] array = {9, 7, 5, 11, 12, 2, 14, 3, 10, 6, 1, 4, 8, 7, 1, 2};
 		System.out.println("Original Array: " + arrayToString(array));
 
 		quickSort(array, 0, array.length - 1);
@@ -33,10 +33,12 @@ public class QuickSort {
 			if (array[j] <= pivot) {
 				i++;
 				swap(array, i, j);
+				System.out.println("Array: " + arrayToString(array));
 			}
 		}
 
 		swap(array, i + 1, high);
+		System.out.println("Array: " + arrayToString(array));
 		return i + 1;
 	}
 

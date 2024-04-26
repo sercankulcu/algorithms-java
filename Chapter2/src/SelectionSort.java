@@ -18,6 +18,8 @@ public class SelectionSort {
 			int temp = arr[minIndex];
 			arr[minIndex] = arr[i];
 			arr[i] = temp;
+			printArray(arr);
+
 		}
 	}
 
@@ -31,7 +33,7 @@ public class SelectionSort {
 
 	// Main method to test SelectionSort class
 	public static void main(String[] args) {
-		int[] arr = {64, 25, 12, 22, 11};
+		int[] arr = {64, 25, 12, 22, 11, 7, 6, 8};
 		System.out.println("Original array:");
 		printArray(arr);
 
