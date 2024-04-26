@@ -1,7 +1,6 @@
 
 public class MetaTernarySearch {
 
-	// Function to perform Meta Ternary Search
 	public static int metaTernarySearch(int[] arr, int key) {
 		int n = arr.length;
 		int start = 0;
@@ -12,10 +11,12 @@ public class MetaTernarySearch {
 			int mid1 = start + (end - start) / 3;
 			int mid2 = end - (end - start) / 3;
 
+			System.out.println("offset = " + mid1);
 			// If key is found at mid1, return mid1
 			if (arr[mid1] == key)
 				return mid1;
 
+			System.out.println("offset = " + mid2);
 			// If key is found at mid2, return mid2
 			if (arr[mid2] == key)
 				return mid2;
@@ -49,8 +50,8 @@ public class MetaTernarySearch {
 
 	// Main method to test MetaTernarySearch class
 	public static void main(String[] args) {
-    int[] arr = {2, 3, 4, 10, 20, 21, 22, 23, 24, 25, 26, 40};
-		int key = 10;
+		int[] arr = {2, 3, 4, 7, 8, 9, 10, 21, 22, 31, 32, 33, 37, 40};
+		int key = 33;
 
 		System.out.println("Original array:");
 		for (int value : arr)

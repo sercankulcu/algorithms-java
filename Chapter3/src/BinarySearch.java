@@ -8,6 +8,7 @@ public class BinarySearch {
 
 		while (left <= right) {
 			int mid = left + (right - left) / 2;
+			System.out.println("mid: " + array[mid]);
 
 			if (array[mid] == target) {
 				return mid; // Return the index if the target is found

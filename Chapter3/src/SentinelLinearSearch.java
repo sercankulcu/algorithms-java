@@ -1,8 +1,8 @@
 
 public class SentinelLinearSearch {
 
-	// Function to perform sentinel linear search
 	public static int sentinelLinearSearch(int[] arr, int x) {
+		
 		int n = arr.length;
 
 		// Save the last element and replace it with the sentinel value (x)
@@ -11,8 +11,11 @@ public class SentinelLinearSearch {
 
 		int i = 0;
 		// Search from the beginning until the sentinel value (x) is found
-		while (arr[i] != x)
+		while (arr[i] != x) {
+			System.out.println("offset = " + i);
 			i++;
+		}
+			
 
 		// Restore the last element of the array
 		arr[n - 1] = lastElement;
@@ -34,8 +37,8 @@ public class SentinelLinearSearch {
 
 	// Main method to test SentinelLinearSearch class
 	public static void main(String[] args) {
-		int[] arr = {10, 20, 80, 30, 60, 50, 110, 100, 130, 170};
-		int x = 110;
+		int[] arr = {2, 3, 4, 7, 8, 9, 10, 21, 22, 31, 32, 33, 37, 40};
+		int x = 33;
 
 		System.out.println("Original array:");
 		for (int value : arr)

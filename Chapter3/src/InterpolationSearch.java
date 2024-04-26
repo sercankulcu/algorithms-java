@@ -1,8 +1,8 @@
 
 public class InterpolationSearch {
 
-	// Function to perform Interpolation Search
 	public static int interpolationSearch(int[] arr, int x) {
+		
 		int n = arr.length;
 		int low = 0;
 		int high = n - 1;
@@ -10,6 +10,7 @@ public class InterpolationSearch {
 		// Interpolation formula to determine the probable position of the element
 		while (low <= high && x >= arr[low] && x <= arr[high]) {
 			int pos = low + ((x - arr[low]) * (high - low)) / (arr[high] - arr[low]);
+			System.out.println("offset = " + pos);
 
 			// If the element is found at pos, return pos
 			if (arr[pos] == x)
@@ -38,8 +39,8 @@ public class InterpolationSearch {
 
 	// Main method to test InterpolationSearch class
 	public static void main(String[] args) {
-		int[] arr = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
-		int key = 50;
+		int[] arr = {2, 3, 4, 7, 8, 9, 10, 21, 22, 31, 32, 33, 37, 40};
+		int key = 33;
 
 		System.out.println("Original array:");
 		for (int value : arr)

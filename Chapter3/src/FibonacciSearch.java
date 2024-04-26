@@ -3,8 +3,8 @@ import java.util.Arrays;
 
 public class FibonacciSearch {
 
-	// Function to perform Fibonacci Search
 	public static int fibonacciSearch(int[] arr, int x) {
+		
 		int n = arr.length;
 
 		// Initialize Fibonacci numbers
@@ -28,6 +28,8 @@ public class FibonacciSearch {
 		while (fib > 1) {
 			// Check if fib2 is a valid index
 			int i = Math.min(offset + fib2, n - 1);
+			
+			System.out.println("offset = " + i);
 
 			// If x is greater than the value at index fib2, cut the subarray from offset to i
 			if (arr[i] < x) {
@@ -67,8 +69,8 @@ public class FibonacciSearch {
 
 	// Main method to test FibonacciSearch class
 	public static void main(String[] args) {
-		int[] arr = {10, 22, 35, 40, 45, 50, 80, 82, 85, 90, 100};
-		int key = 85;
+		int[] arr = {2, 3, 4, 7, 8, 9, 10, 21, 22, 31, 32, 33, 37, 40};
+		int key = 33;
 
 		System.out.println("Original array:");
 		System.out.println(Arrays.toString(arr));

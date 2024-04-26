@@ -1,8 +1,8 @@
 
 public class JumpSearch {
 
-	// Function to perform Jump Search
 	public static int jumpSearch(int[] arr, int x) {
+		
 		int n = arr.length;
 		int blockSize = (int) Math.sqrt(n); // Determine the block size
 
@@ -19,6 +19,7 @@ public class JumpSearch {
 
 		// Perform linear search within the block
 		while (arr[prev] < x) {
+			System.out.println("offset = " + prev);
 			prev++;
 			if (prev == Math.min(step, n))
 				return -1; // Element not present in the array
@@ -41,8 +42,8 @@ public class JumpSearch {
 
 	// Main method to test JumpSearch class
 	public static void main(String[] args) {
-		int[] arr = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
-		int key = 11;
+		int[] arr = {2, 3, 4, 7, 8, 9, 10, 21, 22, 31, 32, 33, 37, 40};
+		int key = 33;
 
 		System.out.println("Original array:");
 		for (int value : arr)
