@@ -29,8 +29,8 @@ public class Knapsack {
 	}
 
 	public static void main(String[] args) {
-		int[] weights = {2, 3, 4, 5, 6};
-		int[] values = {3, 4, 5, 6, 7};
+		int[] weights = {2, 3, 4, 5, 6, 7, 8};
+		int[] values = {3, 5, 8, 6, 10, 11, 15};
 		int capacity = 10;
 
 		// Solve the Knapsack problem
