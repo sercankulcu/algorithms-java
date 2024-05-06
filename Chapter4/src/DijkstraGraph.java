@@ -37,6 +37,7 @@ public class DijkstraGraph {
 
 		// Array to keep track of shortest distances from src
 		int[] dist = new int[V];
+		int[] parent = new int[V];
 
 		// Array to keep track of visited vertices
 		boolean[] visited = new boolean[V];
@@ -46,6 +47,7 @@ public class DijkstraGraph {
 
 		// Set distance of source vertex to itself as 0
 		dist[src] = 0;
+		parent[src] = 0;
 
 		// Add source vertex to priority queue
 		pq.add(new Node(src, 0));
@@ -57,23 +59,33 @@ public class DijkstraGraph {
 
 			// Mark vertex as visited
 			visited[u] = true;
+			System.out.println("*   " + u + " is extracted from queue");
 
 			// Update distances of adjacent vertices of the extracted vertex
 			for (Edge e : adj.get(u)) {
 				int v = e.dest;
 				int weight = e.weight;
+				System.out.println("**  edge " + u + "->" + v + " with weight " + weight);
 
 				// If shortest path to v through u is shorter, update it
 				if (!visited[v] && dist[u] != Integer.MAX_VALUE && dist[u] + weight < dist[v]) {
+					System.out.print("*** shorter path found " + dist[v] + "->");
 					dist[v] = dist[u] + weight;
+					parent[v] = u;
+					System.out.println(dist[v]);
 					pq.add(new Node(v, dist[v]));
 				}
 			}
 		}
 
 		// Print shortest distances from src to all other vertices
-		for (int i = 0; i < V; ++i)
-			System.out.println("(" + src + " --> " + i + "): " + dist[i]);
+		for (int i = 0; i < V; ++i) {
+			System.out.print("(" + src + " --> " + i + "): " + dist[i] + " path: ");
+			for(int j = i; j > 0; j = parent[j]) {
+				System.out.print(" -> " + parent[j]);
+			}
+			System.out.println();
+		}
 	}
 
 	// Inner class representing a node in the priority queue
@@ -92,15 +104,15 @@ public class DijkstraGraph {
 		DijkstraGraph g = new DijkstraGraph(8);
 
 		// Add edges to the graph
-		g.addEdge(0, 1, 4);
-		g.addEdge(0, 2, 1);
+		g.addEdge(0, 1, 1);
+		g.addEdge(0, 2, 6);
 		g.addEdge(0, 7, 3);
-		g.addEdge(1, 2, 2);
+		g.addEdge(1, 2, 4);
 		g.addEdge(2, 3, 3);
-		g.addEdge(2, 4, 5);
-		g.addEdge(3, 5, 6);
-		g.addEdge(4, 6, 2);
-		g.addEdge(5, 6, 7);
+		g.addEdge(2, 4, 6);
+		g.addEdge(3, 5, 4);
+		g.addEdge(4, 6, 3);
+		g.addEdge(5, 6, 1);
 
 		// Find shortest paths from source vertex 0
 		System.out.println("Shortest paths from vertex 0:");

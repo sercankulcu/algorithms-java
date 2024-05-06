@@ -1,7 +1,6 @@
 
 import java.util.*;
 
-// Class representing a graph
 public class BellmanFordGraph {
 	// Inner class representing an edge
 	class Edge {
@@ -37,20 +36,30 @@ public class BellmanFordGraph {
 	// Function to find the shortest paths from a given source vertex
 	void bellmanFord(int src) {
 		int[] dist = new int[V];
+		int[] parent = new int[V];
 
 		// Step 1: Initialize distances from src to all other vertices as INFINITE
 		Arrays.fill(dist, Integer.MAX_VALUE);
 		dist[src] = 0;
+		parent[src] = 0;
 
 		// Step 2: Relax all edges |V| - 1 times
 		for (int i = 1; i < V; ++i) {
+			System.out.println("* for vertex " + i);
+			int j = 0;
 			for (List<Edge> edges : adj) {
+				System.out.println("** for adjacency of " + j++);
 				for (Edge edge : edges) {
 					int u = edge.src;
 					int v = edge.dest;
 					int weight = edge.weight;
-					if (dist[u] != Integer.MAX_VALUE && dist[u] + weight < dist[v])
+					System.out.println("*** for edge " + u + " " + v + " " + weight);
+					if (dist[u] != Integer.MAX_VALUE && dist[u] + weight < dist[v]) {
+						System.out.print("**** shorter path found " + dist[v] + " -> ");
 						dist[v] = dist[u] + weight;
+						parent[v] = u;
+						System.out.println(dist[v]);
+					}
 				}
 			}
 		}
@@ -69,14 +78,19 @@ public class BellmanFordGraph {
 		}
 
 		// Print the shortest distances
-		printSolution(src, dist);
+		printSolution(src, dist, parent);
 	}
 
 	// Function to print the solution
-	void printSolution(int src, int[] dist) {
+	void printSolution(int src, int[] dist, int[] parent) {
 		System.out.println("Shortest paths from vertex 0:");
-		for (int i = 0; i < V; ++i)
-			System.out.println("(" + src + " --> " + i + "): " + dist[i]);
+		for (int i = 0; i < V; ++i) {
+			System.out.print("(" + src + " --> " + i + "): " + dist[i] + " path: ");
+			for(int j = i; j > 0; j = parent[j]) {
+				System.out.print(" -> " + parent[j]);
+			}
+			System.out.println();
+		}
 	}
 
 	public static void main(String[] args) {
@@ -84,15 +98,15 @@ public class BellmanFordGraph {
 		BellmanFordGraph g = new BellmanFordGraph(8);
 
 		// Add edges to the graph
-		g.addEdge(0, 1, 4);
-		g.addEdge(0, 2, 1);
+		g.addEdge(0, 1, 1);
+		g.addEdge(0, 2, 6);
 		g.addEdge(0, 7, 3);
-		g.addEdge(1, 2, 2);
+		g.addEdge(1, 2, 4);
 		g.addEdge(2, 3, 3);
-		g.addEdge(2, 4, 5);
-		g.addEdge(3, 5, 6);
-		g.addEdge(4, 6, 2);
-		g.addEdge(5, 6, -7);
+		g.addEdge(2, 4, 6);
+		g.addEdge(3, 5, 4);
+		g.addEdge(4, 6, -3); // negative weight
+		g.addEdge(5, 6, 1); 
 
 		// Run Bellman-Ford algorithm
 		g.bellmanFord(0);
