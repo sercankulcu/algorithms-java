@@ -1,3 +1,4 @@
+package minspan;
 
 import java.util.*;
 

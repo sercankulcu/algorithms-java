@@ -1,13 +1,14 @@
+package minspan;
 
 import java.util.*;
 
 // Class representing a graph
-public class BoruvkasGraph {
+public class ReverseDeleteGraph {
 	private int V; // Number of vertices
 	private List<Edge> edges; // List of edges
 
 	// Inner class representing an edge
-	class Edge {
+	class Edge implements Comparable<Edge> {
 		int src;
 		int dest;
 		int weight;
@@ -17,10 +18,15 @@ public class BoruvkasGraph {
 			this.dest = dest;
 			this.weight = weight;
 		}
+
+		// Compare two edges based on their weights
+		public int compareTo(Edge compareEdge) {
+			return this.weight - compareEdge.weight;
+		}
 	}
 
 	// Constructor
-	BoruvkasGraph(int v) {
+	ReverseDeleteGraph(int v) {
 		V = v;
 		edges = new ArrayList<>();
 	}
@@ -30,57 +36,32 @@ public class BoruvkasGraph {
 		edges.add(new Edge(src, dest, weight));
 	}
 
-	// Function to find the minimum spanning tree using Borůvka's algorithm
-	void boruvkaMST() {
+	// Function to find the minimum spanning tree using Reverse-Delete algorithm
+	void reverseDeleteMST() {
+		// Sort all edges in non-decreasing order of their weights
+		Collections.sort(edges);
+
 		// Initialize parent array and result list
 		int[] parent = new int[V];
 		List<Edge> result = new ArrayList<>();
 
-		// Initialize each vertex as a separate component
+		// Create disjoint sets with single elements
 		for (int i = 0; i < V; ++i)
 			parent[i] = i;
 
-		// Keep track of cheapest edge for each component
-		int[] cheapest = new int[V];
-		Arrays.fill(cheapest, -1);
+		// Iterate through all edges in sorted order
+		for (int i = 0; i < edges.size(); ++i) {
+			Edge currentEdge = edges.get(i);
 
-		// Variable to track number of components
-		int numTrees = V;
+			// Check if removing this edge keeps the graph connected
+			int x = find(parent, currentEdge.src);
+			int y = find(parent, currentEdge.dest);
 
-		// Loop until there is more than one component
-		while (numTrees > 1) {
-			// Find the cheapest edge for each component
-			for (int i = 0; i < edges.size(); ++i) {
-				int set1 = find(parent, edges.get(i).src);
-				int set2 = find(parent, edges.get(i).dest);
-
-				if (set1 == set2)
-					continue;
-
-				if (cheapest[set1] == -1 || edges.get(i).weight < edges.get(cheapest[set1]).weight)
-					cheapest[set1] = i;
-
-				if (cheapest[set2] == -1 || edges.get(i).weight < edges.get(cheapest[set2]).weight)
-					cheapest[set2] = i;
+			// If removing this edge does not disconnect the graph, include it in the MST
+			if (x != y) {
+				result.add(currentEdge);
+				union(parent, x, y);
 			}
-
-			// Add the cheapest edges to the MST
-			for (int i = 0; i < V; ++i) {
-				if (cheapest[i] != -1) {
-					int set1 = find(parent, edges.get(cheapest[i]).src);
-					int set2 = find(parent, edges.get(cheapest[i]).dest);
-
-					if (set1 == set2)
-						continue;
-
-					result.add(edges.get(cheapest[i]));
-					union(parent, set1, set2);
-					numTrees--;
-				}
-			}
-
-			// Reset cheapest array
-			Arrays.fill(cheapest, -1);
 		}
 
 		// Print the constructed MST
@@ -110,7 +91,7 @@ public class BoruvkasGraph {
 
 	public static void main(String[] args) {
 
-		BoruvkasGraph g = new BoruvkasGraph(8);
+		ReverseDeleteGraph g = new ReverseDeleteGraph(8);
 
 		// Add edges to the graph
 		g.addEdge(0, 1, 4);
@@ -125,7 +106,7 @@ public class BoruvkasGraph {
 		g.addEdge(4, 7, 3);
 		g.addEdge(5, 6, -7);
 
-		// Find minimum spanning tree using Borůvka's algorithm
-		g.boruvkaMST();
+		// Find minimum spanning tree using Reverse-Delete algorithm
+		g.reverseDeleteMST();
 	}
 }
