@@ -88,9 +88,13 @@ public class KruskalsGraph {
 
 	// Function to print the constructed MST
 	void printMST(List<Edge> result) {
+		int total = 0;
 		System.out.println("Edges of Minimum Spanning Tree:");
-		for (Edge edge : result)
+		for (Edge edge : result) {
 			System.out.println(edge.src + " - " + edge.dest + " : " + edge.weight);
+			total += edge.weight;
+		}
+		System.out.println("Total weight is: " + total);
 	}
 
 	public static void main(String[] args) {
@@ -108,7 +112,7 @@ public class KruskalsGraph {
 		g.addEdge(3, 5, 6);
 		g.addEdge(4, 6, 2);
 		g.addEdge(4, 7, 3);
-		g.addEdge(5, 6, -7);
+		g.addEdge(5, 6, 7);
 
 		// Find minimum spanning tree using Kruskal's algorithm
 		g.kruskalMST();

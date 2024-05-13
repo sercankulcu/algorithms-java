@@ -73,19 +73,29 @@ public class PrimsGraph {
 	int minKey(int[] key, boolean[] inMST) {
 		int min = Integer.MAX_VALUE;
 		int minIndex = -1;
-		for (int v = 0; v < V; ++v)
+		for (int v = 0; v < V; ++v) {
 			if (!inMST[v] && key[v] < min) {
 				min = key[v];
 				minIndex = v;
 			}
+		}
 		return minIndex;
 	}
 
 	// Function to print the constructed MST
 	void printMST(int[] parent) {
 		System.out.println("Edges of Minimum Spanning Tree:");
-		for (int i = 1; i < V; ++i)
-			System.out.println(parent[i] + " - " + i);
+		int total = 0;
+		for (int i = 1; i < V; ++i) {
+			//System.out.println(i + " -> " + parent[i]);
+			for (Edge e : adj.get(i)) {
+				if(e.dest == parent[i]) {
+					System.out.println(i + " -> " + parent[i] + " w: " + e.weight);
+					total += e.weight;
+				}
+			}
+		}
+		System.out.println("Total weight is: " + total);
 	}
 
 	public static void main(String[] args) {
@@ -103,7 +113,7 @@ public class PrimsGraph {
 		g.addEdge(3, 5, 6);
 		g.addEdge(4, 6, 2);
 		g.addEdge(4, 7, 3);
-		g.addEdge(5, 6, -7);
+		g.addEdge(5, 6, 7);
 
 		// Find minimum spanning tree using Prim's algorithm
 		g.primMST();

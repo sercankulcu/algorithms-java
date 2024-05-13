@@ -2,98 +2,91 @@ package minspan;
 
 import java.util.*;
 
-// Class representing a graph
 public class ReverseDeleteGraph {
-	private int V; // Number of vertices
-	private List<Edge> edges; // List of edges
 
-	// Inner class representing an edge
 	class Edge implements Comparable<Edge> {
 		int src;
 		int dest;
 		int weight;
 
-		Edge(int src, int dest, int weight) {
+		public Edge(int src, int dest, int weight) {
 			this.src = src;
 			this.dest = dest;
 			this.weight = weight;
 		}
 
-		// Compare two edges based on their weights
-		public int compareTo(Edge compareEdge) {
-			return this.weight - compareEdge.weight;
+		@Override
+		public int compareTo(Edge other) {
+			return other.weight - this.weight;
 		}
 	}
 
-	// Constructor
-	ReverseDeleteGraph(int v) {
-		V = v;
+	private int V; // Number of vertices
+	private List<Edge> edges;
+
+	public ReverseDeleteGraph(int V) {
+		this.V = V;
 		edges = new ArrayList<>();
 	}
 
-	// Function to add an edge to the graph
-	void addEdge(int src, int dest, int weight) {
+	public void addEdge(int src, int dest, int weight) {
 		edges.add(new Edge(src, dest, weight));
 	}
 
-	// Function to find the minimum spanning tree using Reverse-Delete algorithm
-	void reverseDeleteMST() {
-		// Sort all edges in non-decreasing order of their weights
+	public void reverseDeleteMST() {
 		Collections.sort(edges);
 
-		// Initialize parent array and result list
-		int[] parent = new int[V];
-		List<Edge> result = new ArrayList<>();
+		int i = 0;
+		while (i < edges.size()) {
+			Edge edge = edges.get(i);
+			edges.remove(i);
 
-		// Create disjoint sets with single elements
-		for (int i = 0; i < V; ++i)
-			parent[i] = i;
-
-		// Iterate through all edges in sorted order
-		for (int i = 0; i < edges.size(); ++i) {
-			Edge currentEdge = edges.get(i);
-
-			// Check if removing this edge keeps the graph connected
-			int x = find(parent, currentEdge.src);
-			int y = find(parent, currentEdge.dest);
-
-			// If removing this edge does not disconnect the graph, include it in the MST
-			if (x != y) {
-				result.add(currentEdge);
-				union(parent, x, y);
+			if (!isConnected()) {
+				edges.add(i, edge);
+				i++;
 			}
 		}
 
 		// Print the constructed MST
-		printMST(result);
+		printMST(edges);
 	}
 
-	// Function to find the subset of an element
-	int find(int[] parent, int i) {
-		if (parent[i] != i)
-			parent[i] = find(parent, parent[i]);
-		return parent[i];
-	}
+	private boolean isConnected() {
+		DisjointSet ds = new DisjointSet(V);
+		for (Edge edge : edges) {
+			int srcParent = ds.find(edge.src);
+			int destParent = ds.find(edge.dest);
 
-	// Function to perform union of two subsets
-	void union(int[] parent, int x, int y) {
-		int xSet = find(parent, x);
-		int ySet = find(parent, y);
-		parent[xSet] = ySet;
+			if (srcParent != destParent) {
+				ds.union(srcParent, destParent);
+			}
+		}
+
+		// Check if all vertices are in the same set
+		int representative = ds.find(0);
+		for (int i = 1; i < V; i++) {
+			if (ds.find(i) != representative) {
+				return false;
+			}
+		}
+
+		return true;
 	}
 
 	// Function to print the constructed MST
 	void printMST(List<Edge> result) {
+		int total = 0;
 		System.out.println("Edges of Minimum Spanning Tree:");
-		for (Edge edge : result)
+		for (Edge edge : result) {
 			System.out.println(edge.src + " - " + edge.dest + " : " + edge.weight);
+			total += edge.weight;
+		}
+		System.out.println("Total weight is: " + total);
 	}
 
 	public static void main(String[] args) {
-
-		ReverseDeleteGraph g = new ReverseDeleteGraph(8);
-
-		// Add edges to the graph
+		int V = 8;
+		ReverseDeleteGraph g = new ReverseDeleteGraph(V);
 		g.addEdge(0, 1, 4);
 		g.addEdge(0, 2, 1);
 		g.addEdge(0, 7, 3);
@@ -104,9 +97,41 @@ public class ReverseDeleteGraph {
 		g.addEdge(3, 5, 6);
 		g.addEdge(4, 6, 2);
 		g.addEdge(4, 7, 3);
-		g.addEdge(5, 6, -7);
+		g.addEdge(5, 6, 7);
 
-		// Find minimum spanning tree using Reverse-Delete algorithm
 		g.reverseDeleteMST();
+	}
+}
+
+class DisjointSet {
+	int[] parent, rank;
+
+	public DisjointSet(int n) {
+		parent = new int[n];
+		rank = new int[n];
+		for (int i = 0; i < n; i++) {
+			parent[i] = i;
+		}
+	}
+
+	public int find(int x) {
+		if (parent[x] != x) {
+			parent[x] = find(parent[x]);
+		}
+		return parent[x];
+	}
+
+	public void union(int x, int y) {
+		int xRoot = find(x);
+		int yRoot = find(y);
+
+		if (rank[xRoot] < rank[yRoot]) {
+			parent[xRoot] = yRoot;
+		} else if (rank[yRoot] < rank[xRoot]) {
+			parent[yRoot] = xRoot;
+		} else {
+			parent[yRoot] = xRoot;
+			rank[xRoot]++;
+		}
 	}
 }
