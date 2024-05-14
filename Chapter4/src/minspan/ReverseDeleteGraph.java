@@ -104,7 +104,8 @@ public class ReverseDeleteGraph {
 }
 
 class DisjointSet {
-	int[] parent, rank;
+	int[] parent;
+	int[] rank;
 
 	public DisjointSet(int n) {
 		parent = new int[n];
