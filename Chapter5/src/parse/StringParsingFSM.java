@@ -1,3 +1,4 @@
+package parse;
 
 public class StringParsingFSM {
 

@@ -1,3 +1,4 @@
+package match;
 
 public class RabinKarpStringMatch {
 
