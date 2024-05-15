@@ -35,11 +35,13 @@ public class FordFulkersonGraph {
 			// Update residual capacities of the edges and reverse edges along the path
 			for (int v = sink; v != source; v = parent[v]) {
 				int u = parent[v];
+				System.out.print(v + " <- ");
 				residualGraph[u][v] -= pathFlow;
 				residualGraph[v][u] += pathFlow;
 			}
-
+			System.out.println(source);
 			// Add path flow to overall flow
+			System.out.println("Flow added: " + maxFlow + " + " + pathFlow + " = " + (maxFlow + pathFlow));
 			maxFlow += pathFlow;
 		}
 
@@ -88,11 +90,13 @@ public class FordFulkersonGraph {
 			// Update residual capacities of the edges and reverse edges along the path
 			for (int v = sink; v != source; v = parent[v]) {
 				int u = parent[v];
+				System.out.print(v + " <- ");
 				residualGraph[u][v] -= pathFlow;
 				residualGraph[v][u] += pathFlow;
 			}
-
+			System.out.println(source);
 			// Add path flow to overall flow
+			System.out.println("Flow added: " + maxFlow + " + " + pathFlow + " = " + (maxFlow + pathFlow));
 			maxFlow += pathFlow;
 		}
 

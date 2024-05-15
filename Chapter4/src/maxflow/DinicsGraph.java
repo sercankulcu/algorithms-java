@@ -48,10 +48,12 @@ public class DinicsGraph {
 		while (bfs(source, sink)) {
 			int[] start = new int[V];
 			while (true) {
-				int flow = dfs(source, sink, Integer.MAX_VALUE, start);
-				if (flow == 0)
+				int pathFlow = dfs(source, sink, Integer.MAX_VALUE, start);
+				if (pathFlow == 0)
 					break;
-				maxFlow += flow;
+				System.out.println(source);
+				System.out.println("Flow added: " + maxFlow + " + " + pathFlow + " = " + (maxFlow + pathFlow));
+				maxFlow += pathFlow;
 			}
 		}
 		return maxFlow;
@@ -86,6 +88,7 @@ public class DinicsGraph {
 				int minPathFlow = dfs(edge.to, sink, currentFlow, start);
 				if (minPathFlow > 0) {
 					edge.flow += minPathFlow;
+					System.out.print(edge.to + " <- ");
 					adjacencyList[edge.to].get(edge.reverseIndex).flow -= minPathFlow;
 					return minPathFlow;
 				}

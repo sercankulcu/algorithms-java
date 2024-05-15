@@ -11,7 +11,7 @@ public class PushRelabelGraph {
 
 		// initialize height and excess flow of nodes to 0
 		for (int i = 0; i < nodeCount; i++) {
-			nodes.add(new Node(0, 0));
+			nodes.add(new Node(i, 0, 0));
 		}
 	}
 
@@ -29,7 +29,7 @@ public class PushRelabelGraph {
 		// While there are active nodes, push or relabel
 		Node activeNode = getActiveNode();
 		while (activeNode != null) {
-			if (!push(activeNode)) {
+			if (!push(sink, activeNode)) {
 				relabel(activeNode);
 			}
 			activeNode = getActiveNode();
@@ -50,6 +50,7 @@ public class PushRelabelGraph {
 		for (Edge e : s.edges) {
 			e.flow = e.capacity;
 			e.dest.excessFlow += e.flow;
+			
 			e.dest.addEdge(s, -e.flow, 0); // Residual backwards edge
 		}
 	}
@@ -62,10 +63,12 @@ public class PushRelabelGraph {
 	 * - Increases flow along the edge connecting them
 	 * - Updates (or creates) reverse edge along nodes
 	 */
-	private boolean push(Node n) {
+	private boolean push(int sink, Node n) {
 		for (Edge e : n.edges) {
 			if ((n.height > e.dest.height) && (e.flow != e.capacity)) {
 				int flow = Math.min(e.capacity - e.flow, n.excessFlow);
+				if(e.dest.id == sink)
+					System.out.println(e.dest.excessFlow + " " + flow + " " + (e.dest.excessFlow + flow));
 				n.excessFlow -= flow;
 				e.dest.excessFlow += flow;
 				e.flow += flow;
@@ -123,11 +126,13 @@ public class PushRelabelGraph {
 	/* Inner Classes */
 
 	class Node {
+		int id;
 		int height;
 		int excessFlow;
 		List<Edge> edges;
 
-		Node(int height, int excessFlow) {
+		Node(int id, int height, int excessFlow) {
+			this.id = id;
 			this.height = height;
 			this.excessFlow = excessFlow;
 			edges = new ArrayList<>();
