@@ -31,11 +31,13 @@ public class LZWCompression {
 
 				// Add the new substring to the dictionary with the next available code
 				dictionary.put(temp, dictionary.size());
+				System.out.print(temp + " ");
 
 				// Reset current substring to the current character
 				current = "" + c;
 			}
 		}
+		System.out.println();
 
 		// Add the code for the last substring to the result
 		if (!current.equals("")) {

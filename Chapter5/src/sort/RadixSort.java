@@ -12,6 +12,10 @@ public class RadixSort {
 		// Apply counting sort for each character from right to left
 		for (int i = maxLength - 1; i >= 0; i--) {
 			countingSort(arr, i);
+			for (String str : arr) {
+				System.out.print(str + " ");
+			}
+			System.out.println();
 		}
 	}
 
@@ -55,19 +59,11 @@ public class RadixSort {
 	public static void main(String[] args) {
 		String[] strings = {"banana", "apple", "orange", "grape", "kiwi"};
 
-		// Print original array
-		System.out.println("Original array:");
 		for (String str : strings) {
-			System.out.println(str);
+			System.out.print(str + " ");
 		}
-
+		System.out.println();
 		// Sort the array using Radix Sort
 		radixSort(strings);
-
-		// Print sorted array
-		System.out.println("\nArray after Radix Sort (lexicographic order):");
-		for (String str : strings) {
-			System.out.println(str);
-		}
 	}
 }
