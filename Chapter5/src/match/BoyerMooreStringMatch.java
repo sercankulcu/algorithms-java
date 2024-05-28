@@ -17,6 +17,11 @@ public class BoyerMooreStringMatch {
 			badCharShift[pattern.charAt(i)] = i;
 		}
 		System.out.println(Arrays.toString(badCharShift));
+		for (int i = 0; i < 256; i++) {
+			if(badCharShift[i] != -1)
+				System.out.print(badCharShift[i] + " ");
+		}		
+		System.out.println();
 		return badCharShift;
 	}
 
@@ -30,9 +35,14 @@ public class BoyerMooreStringMatch {
 		// Loop through the text with a step size of pattern length
 		while (s <= n - m) {
 			int j = m - 1;
+			
+			System.out.println("text[" + (s + j) + 
+					"] != pattern[" + j + "]\t" + text.charAt(s + j) + "?" + pattern.charAt(j));
 
 			// Start matching from the end of the pattern
 			while (j >= 0 && pattern.charAt(j) == text.charAt(s + j)) {
+				System.out.println("text[" + (s + j) + 
+						"] != pattern[" + j + "]\t" + text.charAt(s + j) + "?" + pattern.charAt(j));
 				j--;
 			}
 
@@ -41,21 +51,22 @@ public class BoyerMooreStringMatch {
 			} else {
 				// Shift the pattern based on bad character rule and good suffix rule
 				s += Math.max(1, j - badCharShift[text.charAt(s + j)]);
+				System.out.println("shift " + s + " characters.");
 			}
 		}
 		return -1; // No match found
 	}
 
 	public static void main(String[] args) {
-		String text = "abracacdacabra";
+		String text = "bbbbabracacdacaacabraca";
 		String pattern = "cacdaca";
 
 		int matchIndex = boyerMooreStringMatch(text, pattern);
 
 		if (matchIndex != -1) {
-			System.out.println("Pattern found at index " + matchIndex + " in the text.");
+			System.out.println("\"" + pattern + "\" found at index " + matchIndex + " in the \"" + text + "\"");
 		} else {
-			System.out.println("Pattern not found in the text.");
+			System.out.println("\"" + pattern + "\" not found in the \"" + text + "\"");
 		}
 	}
 }

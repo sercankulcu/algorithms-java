@@ -12,6 +12,8 @@ public class BruteForceStringMatch {
 
 			// Check if the current substring of text matches the pattern
 			for (j = 0; j < m; j++) {
+				System.out.println("text[" + (i + j) + 
+						"] != pattern[" + j + "]\t" + text.charAt(i + j) + "?" + pattern.charAt(j));
 				if (text.charAt(i + j) != pattern.charAt(j)) {
 					break; // If a character doesn't match, break the loop
 				}
@@ -27,15 +29,15 @@ public class BruteForceStringMatch {
 	}
 
 	public static void main(String[] args) {
-		String text = "abracadabra";
-		String pattern = "cad";
+		String text = "acaddbracaddeabra";
+		String pattern = "cadde";
 
 		int matchIndex = bruteForceStringMatch(text, pattern);
 
 		if (matchIndex != -1) {
-			System.out.println("Pattern found at index " + matchIndex + " in the text.");
+			System.out.println("\"" + pattern + "\" found at index " + matchIndex + " in the \"" + text + "\"");
 		} else {
-			System.out.println("Pattern not found in the text.");
+			System.out.println("\"" + pattern + "\" not found in the \"" + text + "\"");
 		}
 	}
 }

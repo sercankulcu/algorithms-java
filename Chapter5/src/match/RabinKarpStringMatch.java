@@ -15,13 +15,14 @@ public class RabinKarpStringMatch {
 		for (int i = 0; i <= n - m; i++) {
 			// If the hash values match, check character by character
 			if (patternHash == textHash && checkEqual(text, pattern, i, i + m - 1)) {
+				System.out.println(pattern + ":" + patternHash + " - " + text.subSequence(i, i+m) + ":" + textHash);
 				return i; // Match found, return the starting index
 			}
 			// Update the hash value for the next substring
 			if (i < n - m) {
+				System.out.println(pattern + ":" + patternHash + " - " + text.subSequence(i, i+m) + ":" + textHash);
 				textHash = recalculateHash(text, i, i + m, textHash, m);
 			}
-			System.out.println(patternHash + "\t- " + textHash);
 		}
 		return -1; // No match found
 	}
@@ -54,15 +55,15 @@ public class RabinKarpStringMatch {
 	}
 
 	public static void main(String[] args) {
-		String text = "abracadabra";
+		String text = "acaabracadabra";
 		String pattern = "cad";
 
 		int matchIndex = rabinKarpStringMatch(text, pattern);
 
 		if (matchIndex != -1) {
-			System.out.println("Pattern found at index " + matchIndex + " in the text.");
+			System.out.println("\"" + pattern + "\" found at index " + matchIndex + " in the \"" + text + "\"");
 		} else {
-			System.out.println("Pattern not found in the text.");
+			System.out.println("\"" + pattern + "\" not found in the \"" + text + "\"");
 		}
 	}
 }

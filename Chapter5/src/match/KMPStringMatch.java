@@ -15,6 +15,10 @@ public class KMPStringMatch {
 				k = pi[k - 1];
 			}
 			if (pattern.charAt(k) == pattern.charAt(q)) {
+				
+				
+				System.out.println("pattern[" + k + "] == pattern[" + q + "]\t" + 
+						pattern.charAt(k) + "?" + pattern.charAt(q) + " k=" + (k+1));
 				k++;
 			}
 			pi[q] = k;
@@ -35,6 +39,8 @@ public class KMPStringMatch {
 			while (q > 0 && pattern.charAt(q) != text.charAt(i)) {
 				q = pi[q - 1];
 			}
+			System.out.println("pattern[" + (q) + 
+					"] != text[" + i + "]\t" + text.charAt(i) + "?" + pattern.charAt(q));
 			if (pattern.charAt(q) == text.charAt(i)) {
 				q++;
 			}
@@ -46,15 +52,15 @@ public class KMPStringMatch {
 	}
 
 	public static void main(String[] args) {
-		String text = "abracacdacabra";
-		String pattern = "cacdaca";
+		String text = "abracacbacacbacbacabra";
+		String pattern = "acbacb";
 
 		int matchIndex = kmpStringMatch(text, pattern);
 
 		if (matchIndex != -1) {
-			System.out.println("Pattern found at index " + matchIndex + " in the text.");
+			System.out.println("\"" + pattern + "\" found at index " + matchIndex + " in the \"" + text + "\"");
 		} else {
-			System.out.println("Pattern not found in the text.");
+			System.out.println("\"" + pattern + "\" not found in the \"" + text + "\"");
 		}
 	}
 }
