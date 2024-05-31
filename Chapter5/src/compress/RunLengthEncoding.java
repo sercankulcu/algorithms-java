@@ -46,15 +46,15 @@ public class RunLengthEncoding {
 
 	public static void main(String[] args) {
 		// Original string to compress and decompress
-		String original = "AAAABBBCCDAA";
-		System.out.println("Original: " + original);
+		String original = "aaaaaaaaabbbbbbececececececdddddddddecb";
+		System.out.println("Original: \t" + original);
 
 		// Compress the original string using RLE
 		String compressed = compress(original);
-		System.out.println("Compressed: " + compressed);
+		System.out.println("Compressed: \t" + compressed);
 
 		// Decompress the compressed string using RLE
 		String decompressed = decompress(compressed);
-		System.out.println("Decompressed: " + decompressed);
+		System.out.println("Decompressed: \t" + decompressed);
 	}
 }

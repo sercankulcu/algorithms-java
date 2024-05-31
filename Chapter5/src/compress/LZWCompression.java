@@ -3,107 +3,92 @@ package compress;
 import java.util.*;
 
 public class LZWCompression {
+    // Define the dictionary globally
+    private static Map<String, Integer> dictionary = new HashMap<>();
+    private static Map<Integer, String> reverseDictionary = new HashMap<>();
+    private static int dictSize = 0;
 
-	// Method to compress a string
-	public static List<Integer> compress(String uncompressed) {
-		// Create a dictionary to store substrings and their corresponding codes
-		Map<String, Integer> dictionary = new HashMap<>();
+    // Initialize dictionary with unique characters from the input
+    private static void initializeDictionary(String input) {
+        dictionary.clear();
+        reverseDictionary.clear();
+        dictSize = 0;
+        for (char c : input.toCharArray()) {
+            if (!dictionary.containsKey("" + c)) {
+                dictionary.put("" + c, dictSize);
+                System.out.println(c + " is added to dictionary with key " + dictSize);
+                reverseDictionary.put(dictSize, "" + c);
+                dictSize++;
+            }
+        }
+    }
 
-		// Initialize the dictionary with single characters
-		for (int i = 0; i < 256; i++) {
-			dictionary.put("" + (char)i, i);
-		}
+    // Compress a string to a list of output symbols.
+    public static List<Integer> compress(String input) {
+        // Initialize the dictionary
+        initializeDictionary(input);
 
-		// Initialize variables
-		String current = "";  // Current substring being processed
-		List<Integer> result = new ArrayList<>();  // Resulting list of compressed codes
+        String w = "";
+        List<Integer> result = new ArrayList<>();
+        for (char c : input.toCharArray()) {
+            String wc = w + c;
+            if (dictionary.containsKey(wc))
+                w = wc;
+            else {
+                result.add(dictionary.get(w));
+                // Add wc to the dictionary.
+                dictionary.put(wc, dictSize);
+                System.out.println(wc + " is added to dictionary with key " + dictSize);
+                reverseDictionary.put(dictSize, wc);
+                dictSize++;
+                w = "" + c;
+            }
+        }
 
-		// Iterate through each character in the input string
-		for (char c : uncompressed.toCharArray()) {
-			String temp = current + c;  // Append current character to current substring
+        // Output the code for w.
+        if (!w.equals(""))
+            result.add(dictionary.get(w));
+        return result;
+    }
 
-			// Check if the current substring is in the dictionary
-			if (dictionary.containsKey(temp)) {
-				current = temp;  // Update current substring
-			} else {
-				// Add code for current substring to the result
-				result.add(dictionary.get(current));
+    // Decompress a list of output ks to a string.
+    public static String decompress(List<Integer> compressed) {
+        if (compressed == null || compressed.isEmpty()) {
+            return "";
+        }
 
-				// Add the new substring to the dictionary with the next available code
-				dictionary.put(temp, dictionary.size());
-				System.out.print(temp + " ");
+        String w = reverseDictionary.get(compressed.remove(0));
+        StringBuilder result = new StringBuilder(w);
+        for (int k : compressed) {
+            String entry;
+            if (reverseDictionary.containsKey(k))
+                entry = reverseDictionary.get(k);
+            else if (k == dictSize)
+                entry = w + w.charAt(0);
+            else
+                throw new IllegalArgumentException("Bad compressed k: " + k);
 
-				// Reset current substring to the current character
-				current = "" + c;
-			}
-		}
-		System.out.println();
+            result.append(entry);
 
-		// Add the code for the last substring to the result
-		if (!current.equals("")) {
-			result.add(dictionary.get(current));
-		}
+            // Add w+entry[0] to the dictionary.
+            reverseDictionary.put(dictSize, w + entry.charAt(0));
+            dictionary.put(w + entry.charAt(0), dictSize);
+            dictSize++;
 
-		// Return the list of compressed codes
-		return result;
-	}
+            w = entry;
+        }
+        return result.toString();
+    }
 
-	// Method to decompress a list of codes
-	public static String decompress(List<Integer> compressed) {
-		// Create a dictionary to store codes and their corresponding substrings
-		Map<Integer, String> dictionary = new HashMap<>();
+    public static void main(String[] args) {
+        
+    	String input = "aaaaaaaaaaaaaabbbbbbececececececdddddddddecbaaaaaaaaaa";
+        
+        List<Integer> compressed = compress(input);
+        System.out.println("Input: \t\t" + input);
+        System.out.println("Compressed: \t" + compressed);
 
-		// Initialize the dictionary with single characters
-		for (int i = 0; i < 256; i++) {
-			dictionary.put(i, "" + (char)i);
-		}
-
-		// Initialize variables
-		StringBuilder result = new StringBuilder();  // Resulting decompressed string
-		String previous = "" + (char)(int)compressed.remove(0);  // Previous substring
-
-		// Append the first character to the result
-		result.append(previous);
-
-		// Iterate through each code in the compressed list
-		for (int k : compressed) {
-			String current;  // Current substring
-
-			// Check if the code is in the dictionary
-			if (dictionary.containsKey(k)) {
-				current = dictionary.get(k);  // Get the corresponding substring
-			} else if (k == dictionary.size()) {
-				// Special case for when the code represents a substring that's not in the dictionary
-				current = previous + previous.charAt(0);
-			} else {
-				throw new IllegalArgumentException("Bad compressed k: " + k);
-			}
-
-			// Append the current substring to the result
-			result.append(current);
-
-			// Add the new substring to the dictionary with the next available code
-			dictionary.put(dictionary.size(), previous + current.charAt(0));
-
-			// Update the previous substring
-			previous = current;
-		}
-
-		// Return the decompressed string
-		return result.toString();
-	}
-
-	public static void main(String[] args) {
-		// Original string to compress and decompress
-		String original = "ababbabcababba";
-		System.out.println("Original: " + original);
-
-		// Compress the original string
-		List<Integer> compressed = compress(original);
-		System.out.println("Compressed: " + compressed);
-
-		// Decompress the compressed list of codes
-		String decompressed = decompress(compressed);
-		System.out.println("Decompressed: " + decompressed);
-	}
+        String decompressed = decompress(new ArrayList<>(compressed)); // Use a copy for decompression
+        System.out.println("Decompressed: \t" + decompressed);
+    }
 }

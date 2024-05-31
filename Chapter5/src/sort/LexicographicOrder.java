@@ -1,5 +1,6 @@
 package sort;
 
+import java.util.Arrays;
 
 public class LexicographicOrder {
 
@@ -16,18 +17,17 @@ public class LexicographicOrder {
 					String temp = arr[i];
 					arr[i] = arr[j];
 					arr[j] = temp;
+					System.out.println(Arrays.toString(arr));
 				}
 			}
-			for (String str : arr) {
-				System.out.print(str + " ");
-			}
-			System.out.println();
 		}
 	}
 
 	public static void main(String[] args) {
-		String[] strings = {"banana", "apple", "orange", "grape", "kiwi"};
+		//String[] strings = {"banana", "orange", "grape", "apple", "kiwi"};
+		String[] strings = {"eabcdf", "abcde", "bcdea", "cdeab", "deabcg"};
 
+		System.out.println(Arrays.toString(strings));
 		// Sort the array in lexicographic order
 		lexicographicSort(strings);
 	}

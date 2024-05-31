@@ -27,6 +27,14 @@ public class LevenshteinDistance {
 				}
 			}
 		}
+		
+		for(int i = 0; i <= str1.length(); i++) {
+			for(int j = 0; j <= str2.length(); j++) {
+				System.out.print(dp[i][j] + " ");
+			}
+			System.out.println();
+		}
+		System.out.println();
 
 		// Return the edit distance between the two strings
 		return dp[str1.length()][str2.length()];
@@ -36,8 +44,8 @@ public class LevenshteinDistance {
 
 		// Print the Levenshtein Distance
 		System.out.println("Distance is: " + levenshteinDistance("kitten", "sitting"));
-		System.out.println("Distance is: " + levenshteinDistance("kitten", "sittin"));
-		System.out.println("Distance is: " + levenshteinDistance("ercan", "sercan"));
-		System.out.println("Distance is: " + levenshteinDistance("apple", "banana"));
+		//System.out.println("Distance is: " + levenshteinDistance("kitten", "sittin"));
+		//System.out.println("Distance is: " + levenshteinDistance("ercan", "sercan"));
+		//System.out.println("Distance is: " + levenshteinDistance("apple", "banana"));
 	}
 }
