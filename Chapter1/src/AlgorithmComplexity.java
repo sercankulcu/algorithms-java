@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class AlgorithmComplexity {
 	
-	final static int SIZE = 100000000;
+	final static int SIZE = 500000000;
 
 	public static int linearSearch(int[] array, int target) {
 		for (int i = 0; i < array.length; i++) {
