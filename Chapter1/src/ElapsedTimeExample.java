@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class ElapsedTimeExample {
 	
-	final static int SIZE = 100000000;
+	final static int SIZE = 500000000;
 	static Random random = new Random();
 
 
