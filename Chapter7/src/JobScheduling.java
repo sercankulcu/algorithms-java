@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class JobSchedulingApproximation {
+public class JobScheduling {
 
     // Class representing a Job with attributes: ID, deadline, and profit
     static class Job implements Comparable<Job> {
