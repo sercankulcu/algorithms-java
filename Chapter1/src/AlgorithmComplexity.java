@@ -31,9 +31,7 @@ public class AlgorithmComplexity {
 		System.out.println(f2(32));
 		System.out.println(f3(32));
 		System.out.println(f4(32));
-		System.out.println(f5(16));
 		System.out.println(f5(32));
-		System.out.println(f5(64));
 		System.out.println(f6(32));
 	}
 
@@ -82,10 +80,8 @@ public class AlgorithmComplexity {
 		// Ignore integer overflow.
 		// 1<<i takes constant time.
 		for (int i = 0; i < n; i = 1 << i) {
-			System.out.print(i + " ");
 			x++;
 		}
-		System.out.println();
 		return x;
 	}
 }
