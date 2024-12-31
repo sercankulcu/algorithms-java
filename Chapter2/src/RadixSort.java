@@ -1,70 +1,95 @@
+import java.util.Arrays;
+import java.util.Random;
+
+/*
+ * 
+ * The Radix Sort algorithm sorts an array of non-negative integers by processing individual digits, 
+ * starting from the least significant digit (units place) to the most significant digit.
+ * 
+ * */
 
 public class RadixSort {
 
-	// Function to perform counting sort based on the digit represented by exp
-	private static int[] countingSort(int[] arr, int exp) {
-		
-		int n = arr.length;
-		int[] output = new int[n]; // Output array
-		int[] count = new int[10]; // Count array to store the count of each digit
+    // Function to perform counting sort based on the digit represented by exp
+    private static int[] countingSort(int[] arr, int exp) {
+        int n = arr.length; // Length of the array
+        int[] output = new int[n]; // Output array to store sorted elements
+        int[] count = new int[10]; // Count array to store occurrences of digits (0-9)
 
-		// Store count of occurrences in count[]
-		for (int i = 0; i < n; i++)
-			count[(arr[i] / exp) % 10]++;
+        // Store count of occurrences of each digit in count[]
+        for (int i = 0; i < n; i++) {
+            int digit = (arr[i] / exp) % 10; // Extract the digit at the current position (exp)
+            count[digit]++; // Increment the count of the digit
+        }
 
-		// Modify count[] to store the actual position of each digit in output[]
-		for (int i = 1; i < 10; i++)
-			count[i] += count[i - 1];
+        // Modify count[] so that it contains the actual position of each digit in the output array
+        for (int i = 1; i < 10; i++) {
+            count[i] += count[i - 1]; // Cumulative count
+        }
 
-		// Build the output array
-		for (int i = n - 1; i >= 0; i--) {
-			output[count[(arr[i] / exp) % 10] - 1] = arr[i];
-			count[(arr[i] / exp) % 10]--;
-		}
+        // Build the output array by placing elements in the correct position
+        for (int i = n - 1; i >= 0; i--) {
+            int digit = (arr[i] / exp) % 10; // Extract the digit
+            output[count[digit] - 1] = arr[i]; // Place the element in the correct position
+            count[digit]--; // Decrement the count for the digit
+        }
 
-		return output;
-	}
+        // Return the sorted array for the current digit
+        return output;
+    }
 
-	// Function to perform radix sort
-	public static int[] radixSort(int[] arr) {
-		int max = getMax(arr); // Find the maximum number in the array
+    // Function to perform radix sort
+    public static int[] radixSort(int[] arr) {
+        // Find the maximum number in the array to determine the number of digits
+        int max = getMax(arr);
 
-		// Perform counting sort for every digit. Note that instead of passing digit number, exp is passed.
-		// exp is 10^i where i is the current digit being considered
-		for (int exp = 1; max / exp > 0; exp *= 10) {
-			arr = countingSort(arr, exp);
-			printArray(arr);
-		}
-		
-		return arr;
-	}
+        // Perform counting sort for each digit, starting from the least significant digit
+        // exp represents the current digit position (1 for units, 10 for tens, etc.)
+        for (int exp = 1; max / exp > 0; exp *= 10) {
+            arr = countingSort(arr, exp); // Sort based on the current digit
+            System.out.println("After sorting by digit position (exp = " + exp + "):");
+            System.out.println(Arrays.toString(arr)); // Print the array state after each pass
+        }
 
-	// Function to find the maximum element in the array
-	private static int getMax(int[] arr) {
-		int max = arr[0];
-		for (int i = 1; i < arr.length; i++) {
-			if (arr[i] > max)
-				max = arr[i];
-		}
-		return max;
-	}
+        // Return the fully sorted array
+        return arr;
+    }
 
-	// Function to print the array
-	public static void printArray(int[] arr) {
-		for (int value : arr)
-			System.out.print(value + " ");
-		System.out.println();
-	}
+    // Function to find the maximum element in the array
+    private static int getMax(int[] arr) {
+        int max = arr[0]; // Assume the first element is the maximum
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) { // Update max if a larger element is found
+                max = arr[i];
+            }
+        }
+        return max; // Return the maximum value
+    }
 
-	// Main method to test RadixSort class
-	public static void main(String[] args) {
-		int[] arr = {170, 45, 75, 90, 802, 242, 222, 6622, 13, 23, 33};
-		System.out.println("Original array:");
-		printArray(arr);
+    // Helper function to generate an array of random integers
+    public static int[] generateRandomArray(int size, int bound) {
+        Random random = new Random(); // Random number generator
+        int[] array = new int[size]; // Create an array of the specified size
+        for (int i = 0; i < size; i++) {
+            array[i] = random.nextInt(bound); // Generate random integers within the specified range
+        }
+        return array; // Return the generated array
+    }
 
-		arr = radixSort(arr);
+    // Main method to test the RadixSort class
+    public static void main(String[] args) {
+        // Generate a random array of 16 integers with values ranging from 0 to 999
+        int[] array = generateRandomArray(16, 1000);
+        
+        // Print the original (unsorted) array
+        System.out.println("Original array:");
+        System.out.println(Arrays.toString(array));
 
-		System.out.println("Sorted array:");
-		printArray(arr);
-	}
+        // Perform radix sort on the array
+        array = radixSort(array);
+
+        // Print the fully sorted array
+        System.out.println("Sorted array:");
+        System.out.println(Arrays.toString(array));
+    }
 }
