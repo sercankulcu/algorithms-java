@@ -1,42 +1,50 @@
-
 public class BinarySearch {
 
-	// Function to perform binary search
-	public static int binarySearch(int[] array, int target) {
-		int left = 0;
-		int right = array.length - 1;
+    // Function to perform binary search on a sorted array
+    // The binary search algorithm has O(log n) time complexity
+    public static int binarySearch(int[] array, int target) {
+        int left = 0; // Initialize the left boundary of the search range
+        int right = array.length - 1; // Initialize the right boundary of the search range
 
-		while (left <= right) {
-			int mid = left + (right - left) / 2;
-			System.out.println("mid: " + array[mid]);
+        // Loop continues until the left boundary exceeds the right boundary
+        while (left <= right) {
+            // Calculate the middle index of the current range
+            int mid = left + (right - left) / 2;
 
-			if (array[mid] == target) {
-				return mid; // Return the index if the target is found
-			} else if (array[mid] < target) {
-				left = mid + 1; // Search in the right half
-			} else {
-				right = mid - 1; // Search in the left half
-			}
-		}
+            // Print the value at the middle index for debugging purposes
+            System.out.println("mid: " + array[mid]);
 
-		return -1; // Return -1 if the target is not found in the array
-	}
+            // Check if the target value is at the middle index
+            if (array[mid] == target) {
+                return mid; // Return the index if the target is found
+            } else if (array[mid] < target) {
+                // If the target is greater than the middle element,
+                // search in the right half of the array
+                left = mid + 1;
+            } else {
+                // If the target is smaller than the middle element,
+                // search in the left half of the array
+                right = mid - 1;
+            }
+        }
 
-	public static void main(String[] args) {
-		// Sorted array for binary search
-		int[] sortedArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        // If the target value is not found, return -1
+        return -1;
+    }
 
-		// Target value to search for
-		int target = 7;
+    public static void main(String[] args) {
+        // Sorted array in which we will search for the target
+    	int[] arr = {2, 3, 4, 7, 8, 9, 10, 21, 22, 31, 32, 33, 37, 40, 42, 44, 45, 46, 47, 48};
+        int key = 46; // Define the element to search for
 
-		// Perform binary search
-		int index = binarySearch(sortedArray, target);
+        // Perform binary search and store the result (index of the target)
+        int index = binarySearch(arr, key);
 
-		// Display the result
-		if (index != -1) {
-			System.out.println("Target " + target + " found at index " + index);
-		} else {
-			System.out.println("Target " + target + " not found in the array");
-		}
-	}
+        // Display the result of the search
+        if (index != -1) {
+            System.out.println("Target " + key + " found at index " + index);
+        } else {
+            System.out.println("Target " + key + " not found in the array");
+        }
+    }
 }
