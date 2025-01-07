@@ -112,10 +112,32 @@ public class HuffmanCoding {
 
         return decodedText.toString();
     }
+    
+ // Function to process the binary string, pad if necessary, and split into bytes
+    public static void processBinaryString(String binaryString) {
+        // Check if the string length is not a multiple of 8
+        if (binaryString.length() % 8 != 0) {
+            int paddingLength = 8 - (binaryString.length() % 8); // Calculate the number of zeros to add
+            for (int i = 0; i < paddingLength; i++) {
+                binaryString += "0"; // Append zeros to the end of the string
+            }
+            //System.out.println("Binary string was not a multiple of 8. Padding with zeros...");
+        }
+
+        //System.out.println("Binary string split into bytes:");
+
+        // Read 8 characters at a time and process each as a byte
+        for (int i = 0; i < binaryString.length(); i += 8) {
+            String byteString = binaryString.substring(i, i + 8); // Extract an 8-character substring
+            int byteValue = Integer.parseInt(byteString, 2); // Convert the binary string to a decimal integer
+            System.out.print((char)byteValue); // Print the binary byte and its decimal value
+        }
+        System.out.println();
+    }
 
     public static void main(String[] args) {
         // Example text to encode and decode
-        String text = "this is an example for huffman encoding";
+        String text = "hello, this is an example for huffman encoding!";
 
         // Perform Huffman coding on the example text
         // Step 2: Build the Huffman Tree
@@ -136,8 +158,11 @@ public class HuffmanCoding {
         }
 
         // Print the encoded text
-        System.out.println("\nEncoded Text: ");
+        System.out.println("\nEncoded Text (text): ");
         System.out.println(encodedText);
+        
+        System.out.println("\nEncoded Text (binary): ");
+        processBinaryString(encodedText.toString());
 
         // Step 6: Decode the encoded text
         String decodedText = decodeHuffmanCodes(encodedText.toString(), root);
