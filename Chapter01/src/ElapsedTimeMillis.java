@@ -3,7 +3,7 @@ import java.util.Random;
 public class ElapsedTimeMillis {
 	
 	// Constant SIZE to define the number of elements in the array
-	final static int SIZE = 500000000;
+	final static int SIZE = 5000000;
 
 	// Random object to generate random numbers
 	static Random random = new Random();

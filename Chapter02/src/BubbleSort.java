@@ -12,7 +12,7 @@ public class BubbleSort {
 
     public static void main(String[] args) {
         // Generate a random array with 16 elements and values ranging from 0 to 999
-        int[] array = generateRandomArray(16, 1000);
+        int[] array = generateRandomArray(16, 100);
 
         // Print the original unsorted array for reference
         System.out.println("Original Array: " + Arrays.toString(array));
