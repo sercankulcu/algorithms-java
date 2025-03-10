@@ -21,8 +21,10 @@ public class ExponentialSearch {
         // Find the range for binary search by doubling the index (exponentially increasing) 
         // until arr[i] is greater than or equal to x
         int i = 1;
-        while (i < n && arr[i] <= x)
+        while (i < n && arr[i] <= x) {
             i *= 2; // Exponentially increase i: 1, 2, 4, 8, 16, ...
+            System.out.println("offset = " + i);
+        }
 
         // Print the starting index for binary search (range start)
         System.out.println("start index = " + i / 2);

@@ -24,21 +24,23 @@ public class JumpSearch {
             // If the element at the end of the block is smaller than the target value, jump to the next block
             prev = step;
             step += blockSize; // Move to the next block
+            System.out.println("offset = " + prev);
             if (prev >= n) // If we have reached the end of the array without finding the element, return -1
                 return -1; 
         }
 
         // Perform linear search within the identified block
         while (arr[prev] < x) {
-            System.out.println("offset = " + prev); // Debugging output to see the current index being checked
             prev++; // Move to the next element within the block
+            System.out.println("offset = " + prev); // Debugging output to see the current index being checked
             if (prev == Math.min(step, n)) // If the end of the block is reached, the element is not present
                 return -1; 
         }
 
         // If the element is found, return its index
-        if (arr[prev] == x)
-            return prev; // Return the index where the element is found
+        if (arr[prev] == x) {
+        	return prev; // Return the index where the element is found
+        }
         else
             return -1; // If the element is not found, return -1
     }
