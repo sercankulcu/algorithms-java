@@ -12,16 +12,16 @@ public class MergeSort {
 
     public static void main(String[] args) {
         // Generate an array of 16 random integers with values ranging up to 1000
-        int[] array = generateRandomArray(16, 1000);
+        int[] array = generateRandomArray(16, 100);
         
         // Print the original (unsorted) array
-        System.out.println("Original Array: " + Arrays.toString(array));
+        System.out.println("Original Array:      " + Arrays.toString(array));
 
         // Perform merge sort on the array
         mergeSort(array, 0, array.length - 1);
 
         // Print the sorted array
-        System.out.println("Sorted Array: " + Arrays.toString(array));
+        System.out.println("Sorted Array:        " + Arrays.toString(array));
     }
 
     // Recursive function to perform the Merge Sort algorithm
@@ -104,7 +104,7 @@ public class MergeSort {
 
         // Fill the array with random integers between 0 and the specified bound
         for (int i = 0; i < size; i++) {
-            array[i] = random.nextInt(bound);
+            array[i] = 10 + random.nextInt(bound - 10);
         }
 
         // Return the generated array

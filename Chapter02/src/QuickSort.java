@@ -10,16 +10,16 @@ public class QuickSort {
 
     public static void main(String[] args) {
         // Generate an array of 16 random integers with values ranging up to 1000
-        int[] array = generateRandomArray(16, 1000);
+        int[] array = generateRandomArray(16, 100);
 
         // Print the original (unsorted) array
-        System.out.println("Original Array: " + Arrays.toString(array));
+        System.out.println("Original Array:       " + Arrays.toString(array));
 
         // Perform quick sort on the array
         quickSort(array, 0, array.length - 1);
 
         // Print the sorted array
-        System.out.println("Sorted Array: " + Arrays.toString(array));
+        System.out.println("Sorted Array:         " + Arrays.toString(array));
     }
 
     // Recursive function to perform the QuickSort algorithm
@@ -29,7 +29,6 @@ public class QuickSort {
             // All elements smaller than the pivot are moved to its left,
             // and all greater elements are moved to its right
             int pivotIndex = partition(array, low, high);
-            System.out.println("Pivot: " + array[pivotIndex]);
 
             // Recursively sort the subarray to the left of the pivot
             quickSort(array, low, pivotIndex - 1);
@@ -43,6 +42,7 @@ public class QuickSort {
     private static int partition(int[] array, int low, int high) {
         // Choose the last element as the pivot
         int pivot = array[high];
+        System.out.println("Pivot: " + pivot + " Low: " + low + " High: " + high);
 
         // Index of the smaller element
         int i = low - 1;
@@ -66,7 +66,7 @@ public class QuickSort {
         swap(array, i + 1, high);
 
         // Print the array state after placing the pivot in its correct position
-        System.out.println("Array after placing pivot: " + Arrays.toString(array));
+        System.out.println("After placing pivot:  " + Arrays.toString(array));
 
         // Return the index of the pivot
         return i + 1;
@@ -92,7 +92,7 @@ public class QuickSort {
 
         // Fill the array with random integers between 0 and the specified bound
         for (int i = 0; i < size; i++) {
-            array[i] = random.nextInt(bound);
+            array[i] = 10 + random.nextInt(bound - 10);
         }
 
         // Return the generated array

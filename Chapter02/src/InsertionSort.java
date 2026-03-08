@@ -11,14 +11,14 @@ public class InsertionSort {
 
     public static void main(String[] args) {
         // Generate a random array of integers for testing
-        int[] array = generateRandomArray(16, 1000); 
-        System.out.println("Original Array: " + Arrays.toString(array));
+        int[] array = generateRandomArray(16, 100); 
+        System.out.println("Original Array:     " + Arrays.toString(array));
 
         // Sort the array using the Insertion Sort algorithm
         insertionSort(array);
 
         // Print the sorted array
-        System.out.println("Sorted Array: " + Arrays.toString(array));
+        System.out.println("Sorted Array:       " + Arrays.toString(array));
     }
 
     /**
@@ -47,7 +47,7 @@ public class InsertionSort {
             array[j + 1] = key;
 
             // Print the array after each iteration for visualization/debugging purposes.
-            System.out.println("After iteration " + i + ": " + Arrays.toString(array));
+            System.out.println("After iteration " + String.format("%02d", i) + ": " + Arrays.toString(array));
         }
     }
 
@@ -64,7 +64,7 @@ public class InsertionSort {
         
         // Populate the array with random integers in the range [0, bound).
         for (int i = 0; i < size; i++) {
-            array[i] = random.nextInt(bound); 
+            array[i] = 10 + random.nextInt(bound - 10); 
         }
 
         return array; // Return the generated array.

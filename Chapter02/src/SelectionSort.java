@@ -31,7 +31,7 @@ public class SelectionSort {
             arr[i] = temp;
 
             // Print the array state after each iteration for debugging or analysis
-            System.out.println("Array after pass " + (i + 1) + ": " + Arrays.toString(arr));
+            System.out.println("After pass " + String.format("%02d", i+1) + ":  " + Arrays.toString(arr));
         }
     }
 
@@ -41,7 +41,7 @@ public class SelectionSort {
         Random random = new Random(); // Random number generator
         int[] array = new int[size]; // Create an array of the specified size
         for (int i = 0; i < size; i++) {
-            array[i] = random.nextInt(bound); // Generate random integers between 0 and the bound
+            array[i] = 100 + random.nextInt(bound - 100); // Generate random integers between 0 and the bound
         }
         return array; // Return the generated array
     }
@@ -52,14 +52,14 @@ public class SelectionSort {
         int[] array = generateRandomArray(16, 1000);
 
         // Print the original unsorted array
-        System.out.println("Original array:");
+        System.out.print("Original array: ");
         System.out.println(Arrays.toString(array));
 
         // Call the selectionSort method to sort the array
         selectionSort(array);
 
         // Print the sorted array
-        System.out.println("Sorted array:");
+        System.out.print("Sorted array:   ");
         System.out.println(Arrays.toString(array));
     }
 }

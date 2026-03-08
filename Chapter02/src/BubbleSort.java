@@ -15,13 +15,13 @@ public class BubbleSort {
         int[] array = generateRandomArray(16, 100);
 
         // Print the original unsorted array for reference
-        System.out.println("Original Array: " + Arrays.toString(array));
+        System.out.println("Original Array:   " + Arrays.toString(array));
 
         // Call the bubbleSort function to sort the array
         bubbleSort(array);
 
         // Print the sorted array to confirm the sorting was successful
-        System.out.println("Sorted Array: " + Arrays.toString(array));
+        System.out.println("Sorted Array:     " + Arrays.toString(array));
     }
 
     // Function to perform the Bubble Sort algorithm
@@ -69,7 +69,7 @@ public class BubbleSort {
         Random random = new Random();  // Create an instance of the Random class
         int[] array = new int[size];  // Initialize an array with the given size
         for (int i = 0; i < size; i++) {
-            array[i] = random.nextInt(bound);  // Generate a random integer between 0 and bound
+            array[i] = 10 + random.nextInt(bound - 10);  // Generate a random integer between 0 and bound
         }
         return array;  // Return the generated array
     }

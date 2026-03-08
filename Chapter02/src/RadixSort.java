@@ -71,7 +71,7 @@ public class RadixSort {
         Random random = new Random(); // Random number generator
         int[] array = new int[size]; // Create an array of the specified size
         for (int i = 0; i < size; i++) {
-            array[i] = random.nextInt(bound); // Generate random integers within the specified range
+            array[i] = 100 + random.nextInt(bound - 100); // Generate random integers within the specified range
         }
         return array; // Return the generated array
     }

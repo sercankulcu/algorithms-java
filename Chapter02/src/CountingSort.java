@@ -117,7 +117,7 @@ public class CountingSort {
         Random random = new Random();  // Create a Random object to generate random numbers.
         int[] array = new int[size];  // Initialize the array with the given size.
         for (int i = 0; i < size; i++) {
-            array[i] = random.nextInt(bound);  // Generate a random integer between 0 and bound.
+            array[i] = 100 + random.nextInt(bound - 100);  // Generate a random integer between 0 and bound.
         }
         return array;  // Return the generated array.
     }

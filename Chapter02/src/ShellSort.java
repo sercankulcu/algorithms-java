@@ -41,7 +41,7 @@ public class ShellSort {
         Random random = new Random(); // Create an instance of the Random class
         int[] array = new int[size]; // Initialize an array of the given size
         for (int i = 0; i < size; i++) {
-            array[i] = random.nextInt(bound); // Generate random integers between 0 and the bound
+            array[i] = 10 + random.nextInt(bound - 10); // Generate random integers between 0 and the bound
         }
         return array; // Return the generated array
     }
@@ -49,17 +49,17 @@ public class ShellSort {
     // Main method to test ShellSort class
     public static void main(String[] args) {
         // Generate a random array with 16 elements, each between 0 and 999
-        int[] array = generateRandomArray(16, 1000);
+        int[] array = generateRandomArray(16, 100);
 
         // Print the original unsorted array
-        System.out.println("Original array:");
+        System.out.print("Original array: ");
         System.out.println(Arrays.toString(array));
 
         // Sort the array using Shell Sort
         shellSort(array);
 
         // Print the sorted array after sorting is completed
-        System.out.println("Sorted array:");
+        System.out.print("Sorted array: ");
         System.out.println(Arrays.toString(array));
     }
 }
