@@ -1,4 +1,6 @@
 public class BinarySearch {
+	
+	static int stepCount = 0;
 
     // Function to perform binary search on a sorted array
     // The binary search algorithm has O(log n) time complexity
@@ -9,10 +11,10 @@ public class BinarySearch {
         // Loop continues until the left boundary exceeds the right boundary
         while (left <= right) {
             // Calculate the middle index of the current range
-            int mid = left + (right - left) / 2;
+            int mid = (left + right) / 2;
 
             // Print the value at the middle index for debugging purposes
-            System.out.println("mid: " + array[mid]);
+            System.out.println("Step:" + (++stepCount) + " mid: " + array[mid]);
 
             // Check if the target value is at the middle index
             if (array[mid] == target) {

@@ -60,15 +60,6 @@ public class MetaBinarySearch {
 		return binarySearchOnBlocks(arr, key, blockSize); // Perform binary search on the identified block
 	}
 
-	// Function to print the search result
-	// This function prints the result of the search (either the index or a not-found message).
-	public static void printSearchResult(int index, int key) {
-		if (index != -1)
-			System.out.println("Element " + key + " found at index " + index); // If found, print the index
-		else
-			System.out.println("Element " + key + " not found in the array"); // If not found, print a message
-	}
-
 	// Main method to test the MetaBinarySearch class
 	// This function tests the search functionality on a given sorted array and a target element.
 	public static void main(String[] args) {
@@ -84,6 +75,12 @@ public class MetaBinarySearch {
 
 		// Perform the Meta Binary Search and print the result
 		int index = metaBinarySearch(arr, key);
-		printSearchResult(index, key); // Print the index or not-found message
+		
+		if (index != -1) {
+            System.out.println("Element " + key + " found at index " + index);
+        }
+        else {
+            System.out.println("Element " + key + " not found in the array");
+        }
 	}
 }

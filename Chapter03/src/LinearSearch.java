@@ -1,4 +1,6 @@
 public class LinearSearch {
+	
+	static int stepCount = 0;
 
     // Function to perform Linear Search
     // Linear Search sequentially checks each element of the array to find the target element.
@@ -6,7 +8,7 @@ public class LinearSearch {
         
         // Iterate through the array, checking each element
         for (int i = 0; i < array.length; i++) {
-            System.out.println("offset = " + i); // Print the current index being checked for debugging
+        	System.out.println("Step:" + (++stepCount) + " offset = " + i); // Print the current index being checked for debugging
 
             // If the current element matches the target, return its index
             if (array[i] == target) {

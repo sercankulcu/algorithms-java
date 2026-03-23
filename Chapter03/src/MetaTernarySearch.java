@@ -51,15 +51,6 @@ public class MetaTernarySearch {
         return -1;
     }
 
-    // Function to print the search result
-    // This function displays whether the element is found or not in the array.
-    public static void printSearchResult(int index, int key) {
-        if (index != -1)
-            System.out.println("Element " + key + " found at index " + index); // If found, print the index
-        else
-            System.out.println("Element " + key + " not found in the array"); // If not found, print the message
-    }
-
     // Main method to test the MetaTernarySearch class
     // This function tests the search functionality with a given sorted array and target element.
     public static void main(String[] args) {
@@ -75,6 +66,12 @@ public class MetaTernarySearch {
 
         // Perform Meta Ternary Search and print the result
         int index = metaTernarySearch(arr, key);
-        printSearchResult(index, key); // Print the index or not-found message
+        
+        if (index != -1) {
+            System.out.println("Element " + key + " found at index " + index);
+        }
+        else {
+            System.out.println("Element " + key + " not found in the array");
+        }
     }
 }

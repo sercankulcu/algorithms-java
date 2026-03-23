@@ -6,6 +6,8 @@
  * */
 
 public class InterpolationSearch {
+	
+	static int stepCount = 0;
 
     // Function to perform Interpolation Search
     // Interpolation Search is an improvement over Binary Search for instances where
@@ -27,7 +29,7 @@ public class InterpolationSearch {
             int pos = low + ((x - arr[low]) * (high - low)) / (arr[high] - arr[low]);
             
             // Print the current estimated position for debugging purposes
-            System.out.println("offset = " + pos);
+            System.out.println("Step:" + (++stepCount) + " offset = " + pos);
 
             // If the element is found at pos, return pos
             if (arr[pos] == x)
@@ -46,16 +48,6 @@ public class InterpolationSearch {
         return -1;
     }
 
-    // Function to print the search result
-    // If index is found, print the index of the element
-    // Otherwise, print that the element is not found in the array
-    public static void printSearchResult(int index, int key) {
-        if (index != -1)
-            System.out.println("Element " + key + " found at index " + index);
-        else
-            System.out.println("Element " + key + " not found in the array");
-    }
-
     // Main method to test the InterpolationSearch class
     public static void main(String[] args) {
         // Define a sorted array for searching
@@ -71,7 +63,11 @@ public class InterpolationSearch {
         // Perform Interpolation search for the target key
         int index = interpolationSearch(arr, key);
         
-        // Print the result of the search (whether the element was found or not)
-        printSearchResult(index, key);
+        if (index != -1) {
+            System.out.println("Element " + key + " found at index " + index);
+        }
+        else {
+            System.out.println("Element " + key + " not found in the array");
+        }
     }
 }

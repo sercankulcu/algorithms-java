@@ -10,6 +10,8 @@ import java.util.Arrays;
  * */
 
 public class FibonacciSearch {
+	
+	static int stepCount = 0;
 
     // Function to perform Fibonacci Search
     // Fibonacci Search is an efficient searching algorithm that uses Fibonacci numbers
@@ -41,7 +43,7 @@ public class FibonacciSearch {
             int i = Math.min(offset + fib2, n - 1);
             
             // Print the current offset for debugging
-            System.out.println("offset = " + i);
+            System.out.println("Step:" + (++stepCount) + " offset = " + i);
 
             // If x is greater than the value at index fib2, eliminate the subarray from offset to i
             if (arr[i] < x) {
@@ -72,15 +74,6 @@ public class FibonacciSearch {
         return -1;
     }
 
-    // Function to print the search result
-    public static void printSearchResult(int index, int key) {
-        // If index is found (not -1), print the index of the element
-        if (index != -1)
-            System.out.println("Element " + key + " found at index " + index);
-        else
-            System.out.println("Element " + key + " not found in the array");
-    }
-
     // Main method to test FibonacciSearch class
     public static void main(String[] args) {
         // Define a sorted array for searching
@@ -93,7 +86,12 @@ public class FibonacciSearch {
 
         // Perform Fibonacci search for the target key
         int index = fibonacciSearch(arr, key);
-        // Print the result of the search (found index or not found message)
-        printSearchResult(index, key);
+        
+        if (index != -1) {
+            System.out.println("Element " + key + " found at index " + index);
+        }
+        else {
+            System.out.println("Element " + key + " not found in the array");
+        }
     }
 }

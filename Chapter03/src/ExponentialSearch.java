@@ -6,6 +6,8 @@
  * */
 
 public class ExponentialSearch {
+	
+	static int stepCount = 0;
 
     // Function to perform Exponential Search
     // Exponential Search is efficient for searching in a sorted array
@@ -23,7 +25,7 @@ public class ExponentialSearch {
         int i = 1;
         while (i < n && arr[i] <= x) {
             i *= 2; // Exponentially increase i: 1, 2, 4, 8, 16, ...
-            System.out.println("offset = " + i);
+            System.out.println("Step:" + (++stepCount) + " offset = " + i);
         }
 
         // Print the starting index for binary search (range start)
@@ -40,6 +42,8 @@ public class ExponentialSearch {
         while (low <= high) {
             // Calculate the middle index of the current range
             int mid = low + (high - low) / 2;
+            
+            System.out.println("Step:" + (++stepCount) + " mid = " + arr[mid]);
 
             // If the element is found at mid, return mid
             if (arr[mid] == x)
@@ -58,14 +62,6 @@ public class ExponentialSearch {
         return -1;
     }
 
-    // Function to print the search result (either index or not found message)
-    public static void printSearchResult(int index, int key) {
-        if (index != -1)
-            System.out.println("Element " + key + " found at index " + index);
-        else
-            System.out.println("Element " + key + " not found in the array");
-    }
-
     // Main method to test the ExponentialSearch class
     public static void main(String[] args) {
         // Define a sorted array for searching
@@ -81,6 +77,11 @@ public class ExponentialSearch {
         // Perform exponential search for the target key
         int index = exponentialSearch(arr, key);
         // Print the result of the search (found index or not found message)
-        printSearchResult(index, key);
+        if (index != -1) {
+            System.out.println("Element " + key + " found at index " + index);
+        }
+        else {
+            System.out.println("Element " + key + " not found in the array");
+        }
     }
 }

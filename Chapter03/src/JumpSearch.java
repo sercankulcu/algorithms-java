@@ -45,16 +45,6 @@ public class JumpSearch {
             return -1; // If the element is not found, return -1
     }
 
-    // Function to print the search result
-    // If the index is found, print the index of the element
-    // Otherwise, print that the element is not found in the array
-    public static void printSearchResult(int index, int key) {
-        if (index != -1)
-            System.out.println("Element " + key + " found at index " + index);
-        else
-            System.out.println("Element " + key + " not found in the array");
-    }
-
     // Main method to test the JumpSearch class
     public static void main(String[] args) {
         // Define a sorted array for searching
@@ -70,7 +60,11 @@ public class JumpSearch {
         // Perform Jump search for the target key
         int index = jumpSearch(arr, key);
         
-        // Print the result of the search (whether the element was found or not)
-        printSearchResult(index, key);
+        if (index != -1) {
+            System.out.println("Element " + key + " found at index " + index);
+        }
+        else {
+            System.out.println("Element " + key + " not found in the array");
+        }
     }
 }

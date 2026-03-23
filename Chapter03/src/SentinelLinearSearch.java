@@ -37,21 +37,12 @@ public class SentinelLinearSearch {
             return -1; // Return -1 if the element is not found in the array
     }
 
-    // Function to print the result of the search
-    // This function displays whether the element is found or not in the array.
-    public static void printSearchResult(int index, int x) {
-        if (index != -1)
-            System.out.println("Element " + x + " found at index " + index); // If found, print the index
-        else
-            System.out.println("Element " + x + " not found in the array"); // If not found, print the message
-    }
-
     // Main method to test the SentinelLinearSearch class
     // This function tests the search functionality with a given sorted array and target element.
     public static void main(String[] args) {
         // Define a sorted array to search
         int[] arr = {2, 3, 4, 7, 8, 9, 10, 21, 22, 31, 32, 33, 37, 40, 42, 44, 45, 46, 47, 48};
-        int key = 21; // Define the element to search for
+        int key = 46; // Define the element to search for
 
         // Print the original array for the user
         System.out.println("Original array:");
@@ -61,6 +52,12 @@ public class SentinelLinearSearch {
 
         // Perform Sentinel Linear Search and print the result
         int index = sentinelLinearSearch(arr, key);
-        printSearchResult(index, key); // Print the index or not-found message
+        
+        if (index != -1) {
+            System.out.println("Element " + key + " found at index " + index);
+        }
+        else {
+            System.out.println("Element " + key + " not found in the array");
+        }
     }
 }
