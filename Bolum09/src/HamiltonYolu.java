@@ -43,3 +43,8 @@ public class HamiltonYolu {
 		dene(cizge(5, new int[][]{{0, 1}, {0, 2}, {1, 2}, {1, 3}, {2, 3}, {2, 4}}));   // true [0, 1, 3, 2, 4]
 	}
 }
+
+/* Beklenen cikti:
+true [0, 1, 4, 3, 2]
+true [0, 1, 3, 2, 4]
+*/

@@ -26,3 +26,10 @@ public class UnionFind {
 		System.out.println(Arrays.toString(ata));   // [3, 3, 3, 3, 3]
 	}
 }
+
+/* Beklenen cikti:
+[1, 2, 3, 3, 4]
+3
+[3, 3, 3, 3, 4]
+[3, 3, 3, 3, 3]
+*/

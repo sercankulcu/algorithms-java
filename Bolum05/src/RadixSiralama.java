@@ -41,3 +41,8 @@ public class RadixSiralama {
 		System.out.println(Arrays.toString(b));  // [bat, ca, car, cart, cat]
 	}
 }
+
+/* Beklenen cikti:
+[apple, banana, grape, kiwi, orange]
+[bat, ca, car, cart, cat]
+*/

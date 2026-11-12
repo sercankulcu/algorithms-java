@@ -20,3 +20,7 @@ public class MatrisCarpimi {
 		System.out.println(Arrays.deepToString(carp(A, B)));   // [[18, 14], [62, 66]]
 	}
 }
+
+/* Beklenen cikti:
+[[18, 14], [62, 66]]
+*/

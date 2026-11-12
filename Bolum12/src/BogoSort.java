@@ -34,3 +34,8 @@ public class BogoSort {
 		System.out.println("karistirma: " + tur);   // 84 (tohum 42; beklenen deger 4! = 24)
 	}
 }
+
+/* Beklenen cikti:
+[2, 4, 5, 8]
+karistirma: 84
+*/

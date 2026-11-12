@@ -46,3 +46,12 @@ public class MillerRabin {
 		System.out.println(asalMi(1000000007, 10));   // true
 	}
 }
+
+/* Beklenen cikti:
+263
+1
+false
+true
+false
+true
+*/

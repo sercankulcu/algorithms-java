@@ -61,3 +61,8 @@ public class Boruvka {
 		System.out.println(toplam); // 15  (1. tur 4 kenar, 2. tur BE)
 	}
 }
+
+/* Beklenen cikti:
+[AB(1), BC(5), AD(4), EF(2), BE(3)]
+15
+*/

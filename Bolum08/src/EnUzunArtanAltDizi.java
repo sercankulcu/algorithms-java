@@ -41,3 +41,10 @@ public class EnUzunArtanAltDizi {
 		System.out.println(lisHizli(b));   // 6
 	}
 }
+
+/* Beklenen cikti:
+4
+4
+6
+6
+*/

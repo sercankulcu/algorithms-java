@@ -69,3 +69,17 @@ public class FordFulkerson {
 		// 19  (min kesim {S, 3}: 10 + 9)
 	}
 }
+
+/* Beklenen cikti:
+S A B C D T  +3  |f| = 3
+S A B T  +1  |f| = 4
+S C B T  +1  |f| = 5
+S C D T  +2  |f| = 7
+7
+S 1 2 T  +4  |f| = 4
+S 1 3 4 2 T  +2  |f| = 6
+S 1 4 2 T  +4  |f| = 10
+S 3 1 4 T  +2  |f| = 12
+S 3 4 T  +7  |f| = 19
+19
+*/

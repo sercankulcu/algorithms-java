@@ -57,3 +57,8 @@ public class TersSilme {
 		System.out.println(toplam); // 39
 	}
 }
+
+/* Beklenen cikti:
+[EG(9), AB(7), BE(7), DF(6), AD(5), CE(5)]
+39
+*/

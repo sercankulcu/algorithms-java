@@ -32,3 +32,8 @@ public class Rezervuar {
 		System.out.println(sb.toString().trim());   // 0.50 0.50 0.50 0.50 0.50 0.50
 	}
 }
+
+/* Beklenen cikti:
+[60, 20, 40]
+0.50 0.50 0.50 0.50 0.50 0.50
+*/

@@ -62,3 +62,9 @@ public class AYildiz {
 		System.out.println(g[AD.indexOf('c')]);   // 6.5 (c acik listede kaldi, hic genisletilmedi)
 	}
 }
+
+/* Beklenen cikti:
+7.0
+s -> d -> e -> t
+6.5
+*/

@@ -72,3 +72,9 @@ public class LZW {
 		System.out.println(lzwAc(Arrays.asList(97, 256)));  // aaa
 	}
 }
+
+/* Beklenen cikti:
+[0, 1, 3, 2, 3, 5, 0]
+aabaacababacb
+aaa
+*/

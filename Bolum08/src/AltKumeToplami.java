@@ -22,3 +22,9 @@ public class AltKumeToplami {
 		System.out.println(altKume(new int[]{3, 34, 4, 12, 5, 2}, 30));     // false
 	}
 }
+
+/* Beklenen cikti:
+true
+true
+false
+*/

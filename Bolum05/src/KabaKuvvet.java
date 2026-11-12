@@ -20,3 +20,8 @@ public class KabaKuvvet {
 		System.out.println(kabaKuvvet("HELLO WORLD", "XY"));   // -1
 	}
 }
+
+/* Beklenen cikti:
+3
+-1
+*/

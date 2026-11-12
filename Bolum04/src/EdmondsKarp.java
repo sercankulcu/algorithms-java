@@ -59,3 +59,8 @@ public class EdmondsKarp {
 		// 23  (s13t +12, s24t +4, s243t +7)
 	}
 }
+
+/* Beklenen cikti:
+true 3 1 0
+23
+*/

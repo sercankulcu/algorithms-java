@@ -27,3 +27,8 @@ public class EklemeliSiralama {
 		System.out.println(Arrays.toString(dizi));   // [1, 2, 5, 9, 10]
 	}
 }
+
+/* Beklenen cikti:
+[1, 2, 3, 4, 5, 6]
+[1, 2, 5, 9, 10]
+*/

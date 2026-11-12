@@ -74,3 +74,10 @@ public class Quickhull {
 		System.out.println(ortu.size() + " kose, " + (P.size() - ortu.size()) + " nokta elendi");   // 7 kose, 9 nokta elendi
 	}
 }
+
+/* Beklenen cikti:
+374
+347
+[(2,18), (35,11), (13,27), (4,25), (28,23), (20,2), (10,5)]
+7 kose, 9 nokta elendi
+*/

@@ -24,3 +24,9 @@ public class UstelArama {
 		System.out.println(ustelArama(dizi, 40, 10));   // -1
 	}
 }
+
+/* Beklenen cikti:
+5
+0
+-1
+*/

@@ -92,3 +92,8 @@ public class ItmeYenidenEtiketleme {
 		System.out.println(-s.asiri);                      // 12  (kaynaktan net cikan 9 + 3)
 	}
 }
+
+/* Beklenen cikti:
+12
+12
+*/

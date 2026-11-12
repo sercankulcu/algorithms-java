@@ -21,3 +21,9 @@ public class MonteCarloPi {
 		System.out.println(piTahmin(1000000));     // 3.138504
 	}
 }
+
+/* Beklenen cikti:
+3.1333333333333333
+3.1244
+3.138504
+*/

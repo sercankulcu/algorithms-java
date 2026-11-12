@@ -37,3 +37,7 @@ public class Kahn {
 		System.out.println();   // 0 1 7 2 3 4 5 6
 	}
 }
+
+/* Beklenen cikti:
+0 1 7 2 3 4 5 6
+*/

@@ -22,3 +22,10 @@ public class AsalSayi {
 		System.out.println(asalMi(91));   // false (7 * 13)
 	}
 }
+
+/* Beklenen cikti:
+true
+false
+true
+false
+*/

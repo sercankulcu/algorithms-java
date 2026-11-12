@@ -44,3 +44,7 @@ public class MaksimumKlik {
 		System.out.println("en buyuk klik: " + enIyi);   // [0, 1, 2, 3, 4]
 	}
 }
+
+/* Beklenen cikti:
+en buyuk klik: [0, 1, 2, 3, 4]
+*/

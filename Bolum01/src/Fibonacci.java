@@ -23,3 +23,10 @@ public class Fibonacci {
 		System.out.println(fibBellek(90));    // 2880067194370816120
 	}
 }
+
+/* Beklenen cikti:
+55
+832040
+12586269025
+2880067194370816120
+*/

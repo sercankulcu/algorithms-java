@@ -28,3 +28,7 @@ public class HareketliOrtalama {
 		System.out.println(sb.toString().trim());   // 4.00 6.00 6.00 5.33 6.00
 	}
 }
+
+/* Beklenen cikti:
+4.00 6.00 6.00 5.33 6.00
+*/

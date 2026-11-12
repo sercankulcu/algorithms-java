@@ -70,3 +70,9 @@ public class BellmanFord {
 		System.out.println(yaz(sonUzaklik));   // [0, -1, 1, -2]  (V - 1 = 3 tur sonu)
 	}
 }
+
+/* Beklenen cikti:
+[0, 3, 5, 6]
+Negatif dongu
+[0, -1, 1, -2]
+*/

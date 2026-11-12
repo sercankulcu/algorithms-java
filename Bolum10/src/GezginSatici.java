@@ -156,3 +156,15 @@ public class GezginSatici {
 		System.out.println("6 sehir: " + coz(d6));         // 115 (0 -> 1 -> 2 -> 3 -> 5 -> 4 -> 0)
 	}
 }
+
+/* Beklenen cikti:
+en kisa tur: 18
+altSinir(3, 8) = 15
+ikiKenarSinir = 18.0
+indirge = 14
+INF 1 0 11
+0 INF 18 0
+0 19 INF 4
+10 0 3 INF
+6 sehir: 115
+*/

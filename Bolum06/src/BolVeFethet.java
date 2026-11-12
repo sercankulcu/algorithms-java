@@ -49,3 +49,7 @@ public class BolVeFethet {
 		System.out.println(bolVeFethet(new Problem(a, 0, a.length - 1)).deger);   // 9
 	}
 }
+
+/* Beklenen cikti:
+9
+*/

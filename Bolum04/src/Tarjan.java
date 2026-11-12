@@ -62,3 +62,9 @@ public class Tarjan {
 		System.out.println(Arrays.toString(dusuk));   // [1, 1, 1, 4, 4]
 	}
 }
+
+/* Beklenen cikti:
+4 3
+2 1 0
+[1, 1, 1, 4, 4]
+*/

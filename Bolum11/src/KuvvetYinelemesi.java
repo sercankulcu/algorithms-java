@@ -53,3 +53,10 @@ public class KuvvetYinelemesi {
 		System.out.println(String.format(java.util.Locale.ROOT, "%.4f", ozdeger(a, x)));   // 0.9008
 	}
 }
+
+/* Beklenen cikti:
+[0.6474, 0.6474, 0.4023]
+[0.6539, 0.6539, 0.3807]
+[0.6539, 0.6539, 0.3805]
+0.9008
+*/

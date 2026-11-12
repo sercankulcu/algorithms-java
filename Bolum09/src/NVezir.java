@@ -59,3 +59,9 @@ public class NVezir {
 		System.out.println(coz(new int[n][n], 0));   // false
 	}
 }
+
+/* Beklenen cikti:
+true [1, 3, 0, 2]
+true [0, 4, 7, 5, 2, 6, 1, 3]
+false
+*/

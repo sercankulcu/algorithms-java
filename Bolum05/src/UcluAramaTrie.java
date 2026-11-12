@@ -49,3 +49,9 @@ public class UcluAramaTrie {
 		System.out.println(t.ara("ka"));   // false
 	}
 }
+
+/* Beklenen cikti:
+true
+false
+false
+*/

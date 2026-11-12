@@ -30,3 +30,7 @@ public class EtkinlikSecimi {
 		System.out.println();   // 7 8 3 4 6 10
 	}
 }
+
+/* Beklenen cikti:
+7 8 3 4 6 10
+*/

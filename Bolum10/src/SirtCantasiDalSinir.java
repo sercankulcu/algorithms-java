@@ -96,3 +96,9 @@ public class SirtCantasiDalSinir {
 		System.out.println("FIFO: " + fifoDalSinir());      // 90
 	}
 }
+
+/* Beklenen cikti:
+sinir(kok) = 115.0
+en iyi once: 90
+FIFO: 90
+*/

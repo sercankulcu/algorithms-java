@@ -16,3 +16,10 @@ public class HizliUs {
 		System.out.println(us(3, 13));   // 1594323
 	}
 }
+
+/* Beklenen cikti:
+3
+27
+729
+1594323
+*/

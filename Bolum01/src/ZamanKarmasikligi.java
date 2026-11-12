@@ -38,3 +38,11 @@ public class ZamanKarmasikligi {
 		System.out.println(enBuyukBul(new int[0]));         // null
 	}
 }
+
+/* Beklenen cikti:
+32
+Ilk eleman: 7
+Dizi bos
+9
+null
+*/

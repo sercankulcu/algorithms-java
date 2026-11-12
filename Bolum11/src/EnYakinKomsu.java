@@ -59,3 +59,9 @@ public class EnYakinKomsu {
 		System.out.println("optimum: " + enKisa(d, yol, 1, kullan));   // 125
 	}
 }
+
+/* Beklenen cikti:
+[0, 1, 3, 2, 4, 0]
+uzunluk: 125
+optimum: 125
+*/

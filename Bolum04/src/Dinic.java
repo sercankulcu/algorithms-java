@@ -89,3 +89,9 @@ public class Dinic {
 		// 19
 	}
 }
+
+/* Beklenen cikti:
+Faz 1: +14, basla = [2, 3, 3, 2, 4, 0], |f| = 14
+Faz 2: +5, basla = [2, 4, 3, 2, 2, 0], |f| = 19
+19
+*/

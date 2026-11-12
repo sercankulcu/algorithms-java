@@ -51,3 +51,9 @@ public class RastgeleHizliSiralama {
 		System.out.println(sec(c, 0, c.length - 1, 2));   // 3
 	}
 }
+
+/* Beklenen cikti:
+[1, 2, 3, 4, 5, 6, 7, 8]
+6
+3
+*/

@@ -87,3 +87,8 @@ public class DalSinirSema {
 		System.out.println(dalSinir());                  // 90
 	}
 }
+
+/* Beklenen cikti:
+115.0
+90
+*/

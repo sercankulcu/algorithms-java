@@ -52,3 +52,9 @@ public class IkiParcali {
 		System.out.println(ikiParcaliMi(0));   // true
 	}
 }
+
+/* Beklenen cikti:
+false
+[0, 1, 1, 0, 1, 1]
+true
+*/

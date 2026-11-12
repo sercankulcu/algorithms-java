@@ -23,3 +23,9 @@ public class KayakKiralama {
 		System.out.println(basaBas(10, 5));                                 // 5 (= OPT)
 	}
 }
+
+/* Beklenen cikti:
+7 / 4 = 1.75
+19 / 10
+5
+*/

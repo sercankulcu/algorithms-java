@@ -62,3 +62,8 @@ public class EnYakinCift {
 		System.out.println(enYakin(X, Y));   // 1.0: (27,27)-(28,27)
 	}
 }
+
+/* Beklenen cikti:
+1.0
+1.0
+*/

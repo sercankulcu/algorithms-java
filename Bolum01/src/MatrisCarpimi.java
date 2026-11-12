@@ -22,3 +22,7 @@ public class MatrisCarpimi {
 		System.out.println(Arrays.deepToString(matrisCarp(A, B)));   // [[19, 22], [43, 50]]
 	}
 }
+
+/* Beklenen cikti:
+[[19, 22], [43, 50]]
+*/

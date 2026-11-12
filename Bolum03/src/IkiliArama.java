@@ -56,3 +56,11 @@ public class IkiliArama {
 		System.out.println(ilkKonum(c, 4));   // 1
 	}
 }
+
+/* Beklenen cikti:
+4
+-1
+7
+10
+1
+*/

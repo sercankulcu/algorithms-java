@@ -67,3 +67,7 @@ public class GeriIzlemeSablon {
 		System.out.println();   // [3, 4, 2] [4, 5]
 	}
 }
+
+/* Beklenen cikti:
+[3, 4, 2] [4, 5]
+*/

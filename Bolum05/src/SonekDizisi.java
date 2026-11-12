@@ -46,3 +46,9 @@ public class SonekDizisi {
 		System.out.println();                     // 3 1
 	}
 }
+
+/* Beklenen cikti:
+[5, 3, 1, 0, 4, 2]
+[1, 3]
+3 1
+*/

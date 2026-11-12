@@ -25,3 +25,11 @@ public class DuzenliIfade {
 		System.out.println("http://didit.csail.mit.edu/".matches(url));       // false
 	}
 }
+
+/* Beklenen cikti:
+Yas: 30
+Ali Veli
+ali.veli@ornek.com
+true
+false
+*/

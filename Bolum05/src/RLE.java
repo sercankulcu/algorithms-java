@@ -23,3 +23,8 @@ public class RLE {
 		System.out.println(rleSikistir("AAAAABB"));          // 5A2B
 	}
 }
+
+/* Beklenen cikti:
+5A3B4C3D
+5A2B
+*/

@@ -27,3 +27,8 @@ public class BoruHatti {
 		System.out.println(Arrays.toString(x[p - 1]));   // [22, 19, 19, 23]
 	}
 }
+
+/* Beklenen cikti:
+7 adim
+[22, 19, 19, 23]
+*/

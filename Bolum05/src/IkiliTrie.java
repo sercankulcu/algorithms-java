@@ -43,3 +43,9 @@ public class IkiliTrie {
 		System.out.println(t.enUzunEslesme("1101"));  // E
 	}
 }
+
+/* Beklenen cikti:
+C
+D
+E
+*/

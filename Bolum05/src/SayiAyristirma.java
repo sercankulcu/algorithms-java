@@ -30,3 +30,8 @@ public class SayiAyristirma {
 		// 5.
 	}
 }
+
+/* Beklenen cikti:
+20.99
+5.
+*/

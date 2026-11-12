@@ -48,3 +48,9 @@ public class CizgeBoyama {
 		System.out.println(boya(0));   // false
 	}
 }
+
+/* Beklenen cikti:
+true [1, 2, 2, 3, 1]
+true [1, 2, 2, 3, 1, 3]
+false
+*/

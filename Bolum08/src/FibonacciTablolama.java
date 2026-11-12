@@ -20,3 +20,10 @@ public class FibonacciTablolama {
 		System.out.println(fibonacci(20));   // 6765
 	}
 }
+
+/* Beklenen cikti:
+0
+1
+34
+6765
+*/

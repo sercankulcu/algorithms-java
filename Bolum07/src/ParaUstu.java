@@ -20,3 +20,9 @@ public class ParaUstu {
 		System.out.println(paraUstu(new int[]{4, 3, 1}, 10));            // 4: 4 + 4 + 1 + 1 (en iyisi 4 + 3 + 3)
 	}
 }
+
+/* Beklenen cikti:
+6
+3
+4
+*/

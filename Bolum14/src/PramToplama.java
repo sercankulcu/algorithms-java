@@ -47,3 +47,11 @@ public class PramToplama {
 		System.out.println("paralel: " + paralelToplama(b));   // paralel: 500500
 	}
 }
+
+/* Beklenen cikti:
+adim 1: [5, 3, 6, 1, 13, 6, 12, 4]
+adim 2: [11, 3, 6, 1, 25, 6, 12, 4]
+adim 4: [36, 3, 6, 1, 25, 6, 12, 4]
+toplam: 36
+paralel: 500500
+*/

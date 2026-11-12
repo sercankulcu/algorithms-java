@@ -36,3 +36,8 @@ public class BirlestirmeliSiralama {
 		System.out.println(Arrays.toString(A));      // [1, 2, 3, 4, 5, 6, 7, 8]
 	}
 }
+
+/* Beklenen cikti:
+[1, 2, 3, 4, 5, 6, 7, 8]
+[1, 2, 3, 4, 5, 6, 7, 8]
+*/

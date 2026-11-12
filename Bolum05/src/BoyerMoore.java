@@ -38,3 +38,9 @@ public class BoyerMoore {
 		System.out.println(boyerMoore("merhaba naber", "abe"));          // 9
 	}
 }
+
+/* Beklenen cikti:
+4 5 3 -1
+0 1 2
+9
+*/

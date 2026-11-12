@@ -27,3 +27,8 @@ public class Horspool {
 		System.out.println(horspool("LO LOELLO O HELLO", "WORLD"));  // -1
 	}
 }
+
+/* Beklenen cikti:
+12
+-1
+*/

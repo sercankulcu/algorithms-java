@@ -21,3 +21,9 @@ public class EnUzunOrtakAltDizi {
 		System.out.println(lcs("ACCGGTGGACAATTCA", "GGAAAGAGATATGCAC"));   // 9: "GGAAATTCA"
 	}
 }
+
+/* Beklenen cikti:
+3
+4
+9
+*/

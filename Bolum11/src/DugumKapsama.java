@@ -23,3 +23,7 @@ public class DugumKapsama {
 		System.out.println(k + ", boyut " + k.size());   // [A, B, G, H, I, J], boyut 6 (optimum 5)
 	}
 }
+
+/* Beklenen cikti:
+[A, B, G, H, I, J], boyut 6
+*/

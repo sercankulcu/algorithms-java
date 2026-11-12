@@ -22,3 +22,8 @@ public class LptCizelgeleme {
 		System.out.println(lpt(new Integer[]{5, 5, 4, 4, 3, 3, 3}, 3));   // 11 (OPT 9, siki ornek)
 	}
 }
+
+/* Beklenen cikti:
+7
+11
+*/

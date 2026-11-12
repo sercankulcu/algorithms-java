@@ -39,3 +39,10 @@ public class DizgiSiralama {
 		System.out.println(Arrays.toString(b));  // [apple, banana, grape, kiwi, orange]
 	}
 }
+
+/* Beklenen cikti:
+-2
+-1
+[abcde, bcdea, cdeab, deabcg, eabcdf]
+[apple, banana, grape, kiwi, orange]
+*/

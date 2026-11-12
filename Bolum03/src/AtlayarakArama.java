@@ -25,3 +25,9 @@ public class AtlayarakArama {
 		System.out.println(atlayarakAraBul(dizi, 99, 10));   // -1
 	}
 }
+
+/* Beklenen cikti:
+7
+-1
+-1
+*/

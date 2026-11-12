@@ -23,3 +23,8 @@ public class AraDegerArama {
 		System.out.println(araDegerArama(dizi, 15, 25));   // -1
 	}
 }
+
+/* Beklenen cikti:
+10
+-1
+*/

@@ -85,3 +85,10 @@ public class Karistirma {
 		System.out.println(String.format(java.util.Locale.ROOT, "%.3f", adet / 60000.0));   // 0.147
 	}
 }
+
+/* Beklenen cikti:
+[2, 3, 4, 5, 1]
+saf: {123=4, 132=5, 213=5, 231=5, 312=4, 321=4}
+Fisher-Yates: {123=1, 132=1, 213=1, 231=1, 312=1, 321=1}
+0.147
+*/

@@ -40,3 +40,8 @@ public class AtamaProblemi {
 		System.out.println("en kucuk maliyet: " + enIyi);          // 9 (4 + 3 + 2)
 	}
 }
+
+/* Beklenen cikti:
+[9, 5, 2, 0]
+en kucuk maliyet: 9
+*/

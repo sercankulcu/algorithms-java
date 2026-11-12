@@ -35,3 +35,7 @@ public class IsSiralama {
 		System.out.println(isSirala(is, 6));   // 140: dilimler 1-4 = Is 3, Is 6, Is 5, Is 1
 	}
 }
+
+/* Beklenen cikti:
+140
+*/

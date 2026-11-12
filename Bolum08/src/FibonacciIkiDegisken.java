@@ -18,3 +18,8 @@ public class FibonacciIkiDegisken {
 		System.out.println(fib(50));   // 12586269025
 	}
 }
+
+/* Beklenen cikti:
+34
+12586269025
+*/

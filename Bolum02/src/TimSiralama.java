@@ -49,3 +49,7 @@ public class TimSiralama {
 		System.out.println(Arrays.toString(dizi));   // [1, 3, 5, 7, 8, 10, 12, 19, 21, 23]
 	}
 }
+
+/* Beklenen cikti:
+[1, 3, 5, 7, 8, 10, 12, 19, 21, 23]
+*/

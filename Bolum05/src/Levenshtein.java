@@ -25,3 +25,10 @@ public class Levenshtein {
 		System.out.println(levenshtein("kar", "ark"));         // 2
 	}
 }
+
+/* Beklenen cikti:
+3
+1
+5
+2
+*/

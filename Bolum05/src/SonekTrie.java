@@ -46,3 +46,9 @@ public class SonekTrie {
 		System.out.println(altDizgiMi(kok, "bb"));  // false
 	}
 }
+
+/* Beklenen cikti:
+8
+true
+false
+*/

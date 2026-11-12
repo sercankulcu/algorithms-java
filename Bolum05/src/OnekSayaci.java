@@ -40,3 +40,10 @@ public class OnekSayaci {
 		System.out.println(t.onekSayisi("x"));   // 0
 	}
 }
+
+/* Beklenen cikti:
+4
+2
+1
+0
+*/

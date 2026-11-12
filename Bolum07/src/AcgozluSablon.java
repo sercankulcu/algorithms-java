@@ -40,3 +40,7 @@ public class AcgozluSablon {
 		System.out.println(acgozlu(a).secilen);   // [7, 8, 3, 4, 6, 10]
 	}
 }
+
+/* Beklenen cikti:
+[7, 8, 3, 4, 6, 10]
+*/

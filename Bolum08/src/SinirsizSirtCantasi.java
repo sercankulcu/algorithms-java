@@ -18,3 +18,8 @@ public class SinirsizSirtCantasi {
 		System.out.println();   // 0 15 30 50 65 90 105 120 140
 	}
 }
+
+/* Beklenen cikti:
+140
+0 15 30 50 65 90 105 120 140
+*/

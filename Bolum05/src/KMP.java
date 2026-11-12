@@ -41,3 +41,9 @@ public class KMP {
 		System.out.println(kmpAra("ababcababcabababd", "ababd"));      // 12
 	}
 }
+
+/* Beklenen cikti:
+[0, 0, 1, 0, 1, 2, 3, 2, 0]
+[0, 0, 1, 2, 0]
+12
+*/

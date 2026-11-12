@@ -55,3 +55,8 @@ public class DFS {
 		System.out.println();   // 0 7 2 4 6 3 5 1
 	}
 }
+
+/* Beklenen cikti:
+0 1 2 3 5 6 4 7
+0 7 2 4 6 3 5 1
+*/

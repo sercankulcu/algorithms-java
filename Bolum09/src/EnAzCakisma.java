@@ -64,3 +64,8 @@ public class EnAzCakisma {
 		System.out.println(y != null && gecerliMi(y));   // true
 	}
 }
+
+/* Beklenen cikti:
+[5, 3, 1, 7, 4, 6, 0, 2] true
+true
+*/

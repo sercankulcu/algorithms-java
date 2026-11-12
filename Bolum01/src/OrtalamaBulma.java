@@ -18,3 +18,10 @@ public class OrtalamaBulma {
 		giris.close();
 	}
 }
+
+/* Beklenen cikti:
+Birinci sayiyi girin:
+Ikinci sayiyi girin:
+Ucuncu sayiyi girin:
+Sayilarin ortalamasi: 25.0
+*/

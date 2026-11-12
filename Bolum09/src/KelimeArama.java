@@ -42,3 +42,10 @@ public class KelimeArama {
 		System.out.println(varMi(iz, "SADE"));     // true
 	}
 }
+
+/* Beklenen cikti:
+true
+true
+false
+true
+*/

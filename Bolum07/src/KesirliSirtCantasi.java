@@ -31,3 +31,7 @@ public class KesirliSirtCantasi {
 		System.out.println(kesirli(s, 50));   // 240.0: 60 + 100 + 120 * 20/30
 	}
 }
+
+/* Beklenen cikti:
+240.0
+*/

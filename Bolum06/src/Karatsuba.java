@@ -27,3 +27,10 @@ public class Karatsuba {
 		System.out.println(karatsuba(1234, 5678));   // 7006652
 	}
 }
+
+/* Beklenen cikti:
+2652
+6164
+672
+7006652
+*/

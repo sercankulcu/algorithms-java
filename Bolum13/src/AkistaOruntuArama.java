@@ -24,3 +24,8 @@ public class AkistaOruntuArama {
 		// eslesme: 4
 	}
 }
+
+/* Beklenen cikti:
+eslesme: 1
+eslesme: 4
+*/

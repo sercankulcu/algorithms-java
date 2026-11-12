@@ -27,3 +27,12 @@ public class SureOlcumu {
 		System.out.println(dogrusalArama(b, 1));   // 5 (en kotu durum)
 	}
 }
+
+/* Not: bu programin ciktisi her calistirmada degisir (zaman olcumu, rastgele sayi ya da
+   is parcaciklarinin sirasi); asagidaki bir ornek calistirmadir. */
+/* Beklenen cikti:
+Gecen sure: 7 ms
+-1
+0
+5
+*/

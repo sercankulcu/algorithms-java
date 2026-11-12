@@ -45,3 +45,12 @@ public class HashArama {
 		System.out.println(hashArama(tablo, 14));   // -1 (kova 4 bos)
 	}
 }
+
+/* Beklenen cikti:
+2
+0
+0
+[58, 75, 12, 122, null, 45, 16, 6, 5, 29]
+1
+-1
+*/

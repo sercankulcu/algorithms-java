@@ -39,3 +39,8 @@ public class BasamakSiralama {
 		System.out.println(Arrays.toString(basamagaGoreSay(d, 1)));   // [41, 11, 32, 23, 15]
 	}
 }
+
+/* Beklenen cikti:
+[2, 24, 45, 66, 75, 90, 170, 802]
+[41, 11, 32, 23, 15]
+*/

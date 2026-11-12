@@ -30,3 +30,9 @@ public class SonluDurumMakinesi {
 		System.out.println(kabulEder(g2, k2, "10011"));  // true
 	}
 }
+
+/* Beklenen cikti:
+true
+false
+true
+*/

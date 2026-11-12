@@ -38,3 +38,12 @@ public class DogrusalArama {
 		System.out.println(gozcuIleAra(d, 5, 9));          // 2
 	}
 }
+
+/* Beklenen cikti:
+0
+5
+-1
+-1
+4
+2
+*/

@@ -62,3 +62,14 @@ public class KarmasiklikFonksiyonlari {
 		System.out.println(k.f5(8));    // 32
 	}
 }
+
+/* Beklenen cikti:
+4
+14
+30
+5
+4
+8
+12
+32
+*/

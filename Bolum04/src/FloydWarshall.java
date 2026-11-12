@@ -71,3 +71,17 @@ public class FloydWarshall {
 		System.out.println(onceki[4][0] + 1);   // 2  (Pi[5][1] = 2: yol 5 -> 4 -> 2 -> 1)
 	}
 }
+
+/* Beklenen cikti:
+   0   3   5   6
+   5   0   2   3
+   3   6   0   1
+   2   5   7   0
+2 1
+   0   4   4   3 inf
+   3   0   7   6 inf
+   6   3   0   2 inf
+   4   1   1   0 inf
+   6   3   3   2   0
+2
+*/

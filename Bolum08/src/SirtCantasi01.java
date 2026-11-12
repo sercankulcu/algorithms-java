@@ -39,3 +39,10 @@ public class SirtCantasi01 {
 		System.out.println(sirtCantasi(new int[]{4, 2, 1, 2, 10}, new int[]{12, 2, 1, 1, 4}, 15));   // 15
 	}
 }
+
+/* Beklenen cikti:
+9
+9
+220
+15
+*/

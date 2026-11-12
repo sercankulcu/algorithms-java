@@ -51,3 +51,8 @@ public class Kruskal {
 		System.out.println(toplam);    // 11  ((2,3) dongu kurdugu icin atlandi, (1,4) hic incelenmedi)
 	}
 }
+
+/* Beklenen cikti:
+[(1,3)=2, (2,5)=2, (1,2)=3, (3,4)=4]
+11
+*/

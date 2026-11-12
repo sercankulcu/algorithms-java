@@ -52,3 +52,9 @@ public class IkiOpt {
 		System.out.println("2-opt: " + uzunluk(tur, d));       // 14.0
 	}
 }
+
+/* Beklenen cikti:
+baslangic: 18.0
+[0, 2, 1, 3]
+2-opt: 14.0
+*/

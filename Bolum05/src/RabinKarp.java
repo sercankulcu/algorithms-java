@@ -37,3 +37,9 @@ public class RabinKarp {
 		System.out.println(rabinKarp("abracadabra", "xyz"));  // -1
 	}
 }
+
+/* Beklenen cikti:
+4
+6
+-1
+*/

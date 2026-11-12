@@ -34,3 +34,7 @@ public class CevrimiciOrtanca {
 		System.out.println(sb.toString().trim());   // 5.0 10.0 5.0 4.0 5.0 6.0
 	}
 }
+
+/* Beklenen cikti:
+5.0 10.0 5.0 4.0 5.0 6.0
+*/

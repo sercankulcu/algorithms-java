@@ -34,3 +34,9 @@ public class BlellochOnek {
 		System.out.println(Arrays.toString(y));       // [2, 5, 10, 11, 18, 24, 32, 36]
 	}
 }
+
+/* Beklenen cikti:
+yukari: [2, 5, 5, 11, 7, 13, 8, 36]
+onek: [0, 2, 5, 10, 11, 18, 24, 32]
+[2, 5, 10, 11, 18, 24, 32, 36]
+*/

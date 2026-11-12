@@ -105,3 +105,13 @@ public class Sayfalama {
 		System.out.println(lruHata(belady, 3) + " " + lruHata(belady, 4));     // 10 8
 	}
 }
+
+/* Beklenen cikti:
+5
+FIFO: 10
+LRU: 9
+LruOnbellek: 9 [0, 3, 2]
+isaretleme: 7
+9 10
+10 8
+*/

@@ -88,3 +88,11 @@ public class Dijkstra {
 		System.out.println();   // 1 3 6 5
 	}
 }
+
+/* Beklenen cikti:
+[6, 3, 3, 2, 0]
+[2, 4, 4, 5, 0]
+5 4 2 1
+[0, 7, 9, 20, 20, 11]
+1 3 6 5
+*/

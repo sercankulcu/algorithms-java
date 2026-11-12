@@ -18,3 +18,8 @@ public class FibonacciBellekleme {
 		System.out.println(fib(40));   // 102334155
 	}
 }
+
+/* Beklenen cikti:
+5
+102334155
+*/

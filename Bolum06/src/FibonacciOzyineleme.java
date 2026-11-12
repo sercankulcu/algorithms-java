@@ -12,3 +12,8 @@ public class FibonacciOzyineleme {
 		System.out.println(fib(20));   // 6765
 	}
 }
+
+/* Beklenen cikti:
+5
+6765
+*/

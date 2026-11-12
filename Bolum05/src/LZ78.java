@@ -33,3 +33,8 @@ public class LZ78 {
 		System.out.println(lz78("aaaa"));           // [(0, a), (1, a), (1)]
 	}
 }
+
+/* Beklenen cikti:
+[(0, a), (1, b), (1, a), (0, c), (2, c), (5, b)]
+[(0, a), (1, a), (1)]
+*/

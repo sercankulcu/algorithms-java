@@ -12,3 +12,8 @@ public class Oklid {
 		System.out.println(ebob(48, 18));      // 6
 	}
 }
+
+/* Beklenen cikti:
+13
+6
+*/

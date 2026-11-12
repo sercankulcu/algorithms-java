@@ -52,3 +52,13 @@ public class Huffman {
 		// R = 111
 	}
 }
+
+/* Beklenen cikti:
+25
+F = 000
+O = 001
+E = 01
+T = 10
+G = 110
+R = 111
+*/

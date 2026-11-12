@@ -61,3 +61,8 @@ public class Kosaraju {
 		// 3 4
 	}
 }
+
+/* Beklenen cikti:
+0 2 1
+3 4
+*/

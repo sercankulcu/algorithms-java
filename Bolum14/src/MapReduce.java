@@ -52,3 +52,7 @@ public class MapReduce {
 		}
 	}
 }
+
+/* Beklenen cikti:
+{apple=5, banana=5, cherry=1, orange=2}
+*/

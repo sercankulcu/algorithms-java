@@ -47,3 +47,9 @@ public class YiginSiralama {
 		System.out.println(Arrays.toString(b));      // [9, 4, 5, 1, 3, 2]
 	}
 }
+
+/* Beklenen cikti:
+[8, 6, 7, 4, 5, 3, 2, 1]
+[1, 2, 3, 4, 5, 6, 7, 8]
+[9, 4, 5, 1, 3, 2]
+*/

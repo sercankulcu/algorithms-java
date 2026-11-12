@@ -50,3 +50,8 @@ public class SaymaliSiralama {
 		System.out.println(Arrays.toString(Arrays.copyOfRange(B, 1, 6)));   // [1, 3, 3, 4, 4]
 	}
 }
+
+/* Beklenen cikti:
+[1, 3, 3, 4, 4]
+[1, 3, 3, 4, 4]
+*/

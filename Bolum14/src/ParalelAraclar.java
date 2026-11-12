@@ -32,3 +32,9 @@ public class ParalelAraclar {
 		System.out.println(Arrays.toString(a));        // [1, 2, 3, 4, 5, 6, 7, 8]
 	}
 }
+
+/* Beklenen cikti:
+{apple=5, banana=5, cherry=1, orange=2}
+100000
+[1, 2, 3, 4, 5, 6, 7, 8]
+*/

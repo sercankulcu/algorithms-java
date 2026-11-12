@@ -36,3 +36,9 @@ public class OruntuOtomati {
 		System.out.println(dfaAra(dfa, "ACACACAC", 7));    // -1
 	}
 }
+
+/* Beklenen cikti:
+4
+3
+-1
+*/

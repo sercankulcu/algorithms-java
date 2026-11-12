@@ -42,3 +42,10 @@ public class BWT {
 		System.out.println(bwtTers("annb$aa"));  // banana
 	}
 }
+
+/* Beklenen cikti:
+NNBAAA
+caraab
+annb$aa
+banana
+*/

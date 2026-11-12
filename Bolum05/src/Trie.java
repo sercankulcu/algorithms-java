@@ -159,3 +159,19 @@ public class Trie {
 		System.out.println(t4.enUzunOrtakOnek());  // kart
 	}
 }
+
+/* Beklenen cikti:
+true true
+false true
+false true
+false false
+true
+true
+true
+false
+false
+[and, ant, do]
+[tea, ted, ten]
+kar
+kart
+*/
