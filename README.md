@@ -4,6 +4,8 @@ Java code examples for the undergraduate **Algorithms (Algoritmalar)** course at
 
 Course page and slides: <https://sercankulcu.github.io/teaching/algorithms>
 
+The course continues in **Advanced Algorithms (İleri Algoritmalar)**: divide and conquer, greedy algorithms, dynamic programming, backtracking, branch and bound, approximation, randomized, online and parallel algorithms. Its code is in [advanced-algorithms-java](https://github.com/sercankulcu/advanced-algorithms-java).
+
 ## Chapters
 
 | Folder | Chapter | Programs |
@@ -13,15 +15,6 @@ Course page and slides: <https://sercankulcu.github.io/teaching/algorithms>
 | `Bolum03` | Searching Algorithms | Linear, binary, hash-table, interpolation, jump and exponential search |
 | `Bolum04` | Graph Algorithms | Adjacency lists, DFS and BFS, Tarjan and Kosaraju (strongly connected components), Kahn's topological sort, bipartite test; Dijkstra, Bellman-Ford, Floyd-Warshall, A*; union-find, Kruskal, Prim, Boruvka, reverse-delete; Ford-Fulkerson, Edmonds-Karp, Dinic, push-relabel |
 | `Bolum05` | String Algorithms | Brute force, KMP, Boyer-Moore, Horspool, Rabin-Karp; RLE, LZW, LZ78; string and radix sorting, regular expressions, finite-state machines and pattern automata, number parsing, Levenshtein distance, suffix array, BWT; trie, prefix counter, binary trie, ternary search trie, suffix trie |
-| `Bolum06` | Divide and Conquer | Divide-and-conquer template, maximum, fast power, recursive Fibonacci, Quickhull, closest pair, Karatsuba, matrix multiplication |
-| `Bolum07` | Greedy Algorithms | Greedy template, making change, activity selection, job sequencing, fractional knapsack, Huffman coding |
-| `Bolum08` | Dynamic Programming | Fibonacci (recursive, memoized, tabulated, two variables), 0/1 and unbounded knapsack, subset sum, longest increasing subsequence, longest common subsequence |
-| `Bolum09` | Backtracking | Backtracking template, permutations, N-queens (plain and fast), min-conflicts, Sudoku, graph coloring, Hamiltonian path, word search |
-| `Bolum10` | Branch and Bound | Branch-and-bound scheme, knapsack, travelling salesman (lower bounds, matrix reduction), assignment problem, maximum clique |
-| `Bolum11` | Approximation Algorithms | Nearest-neighbour tour, 2-opt, LPT scheduling, vertex cover, power iteration |
-| `Bolum12` | Randomized Algorithms | Shuffling, bogosort, randomized quicksort, Monte Carlo estimate of pi, Miller-Rabin |
-| `Bolum13` | Online Algorithms | Ski rental, paging (LRU, FIFO, Belady's anomaly), moving average, online median, reservoir sampling, pattern search in a stream |
-| `Bolum14` | Parallel Algorithms | PRAM sum, Blelloch prefix sum, pipelining, parallel merge sort, MapReduce, parallel matrix multiplication, concurrent traversal, Java parallel tools |
 
 ## Running the examples
 
