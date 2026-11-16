@@ -10,11 +10,17 @@ The course continues in **Advanced Algorithms (İleri Algoritmalar)**: divide an
 
 | Folder | Chapter | Programs |
 |---|---|---|
-| `Bolum01` | Introduction and Algorithm Complexity | Average, step counting and time complexity, primality test, matrix multiplication, permutations, Fibonacci, Euclid's algorithm, running-time measurement, growth of complexity functions |
-| `Bolum02` | Sorting Algorithms | Bubble, insertion, selection and Shell sort; merge sort, quicksort (with the pseudocode `PARCALA`/`HIZLI_SIRALA`), heap sort, counting sort, radix sort, Timsort |
-| `Bolum03` | Searching Algorithms | Linear, binary, hash-table, interpolation, jump and exponential search |
-| `Bolum04` | Graph Algorithms | Adjacency lists, DFS and BFS, Tarjan and Kosaraju (strongly connected components), Kahn's topological sort, bipartite test; Dijkstra, Bellman-Ford, Floyd-Warshall, A*; union-find, Kruskal, Prim, Boruvka, reverse-delete; Ford-Fulkerson, Edmonds-Karp, Dinic, push-relabel |
-| `Bolum05` | String Algorithms | Brute force, KMP, Boyer-Moore, Horspool, Rabin-Karp; RLE, LZW, LZ78; string and radix sorting, regular expressions, finite-state machines and pattern automata, number parsing, Levenshtein distance, suffix array, BWT; trie, prefix counter, binary trie, ternary search trie, suffix trie |
+| `Bolum01` | Introduction | Average of three numbers, step counting, primality test, matrix multiplication, permutations, Fibonacci (plain and memoized), Euclid's algorithm |
+| `Bolum02` | Algorithm Complexity | Growth of the complexity functions f1-f6, running-time measurement and step counting for linear search |
+| `Bolum03` | Sorting Algorithms | Bubble, insertion, selection and Shell sort; merge sort, quicksort (with the pseudocode `PARCALA`/`HIZLI_SIRALA`), heap sort, counting sort, radix sort, Timsort |
+| `Bolum04` | Searching Algorithms | Linear, binary, hash-table, interpolation, jump and exponential search |
+| `Bolum05` | Graph Traversal Algorithms | Adjacency lists, DFS and BFS, Tarjan and Kosaraju (strongly connected components), Kahn's topological sort, bipartite test |
+| `Bolum06` | Shortest Path Algorithms | Dijkstra, Bellman-Ford, Floyd-Warshall, A* |
+| `Bolum07` | Minimum Spanning Tree Algorithms | Union-find, Kruskal, Prim, Boruvka, reverse-delete |
+| `Bolum08` | Network Flow | Ford-Fulkerson, Edmonds-Karp, Dinic, push-relabel |
+| `Bolum09` | String Matching and Compression | Brute force, KMP, Boyer-Moore, Horspool, Rabin-Karp; RLE, LZW, LZ78 |
+| `Bolum10` | Advanced String Algorithms | String and radix sorting, regular expressions, finite-state machines and pattern automata, number parsing, Levenshtein distance, suffix array, BWT |
+| `Bolum11` | Trie Data Structure | Trie, prefix counter, binary trie, ternary search trie, suffix trie |
 
 ## Running the examples
 
@@ -23,7 +29,7 @@ Requires **JDK 21**.
 Every file is a standalone program with a `main` method in the default package, and no program waits for keyboard input. Programs that use randomness use a fixed seed (`new Random(42)`), so their output is repeatable but may differ from a run shown on a slide. To compile and run one chapter:
 
 ```bash
-cd Bolum02/src
+cd Bolum03/src
 javac -d ../bin *.java
 java -cp ../bin HizliSiralama
 ```
@@ -38,7 +44,7 @@ Comments and identifiers are in Turkish, written without Turkish characters so t
 
 ```bash
 python ci/run_examples.py            # every chapter
-python ci/run_examples.py Bolum03    # one chapter
+python ci/run_examples.py Bolum04    # one chapter
 ```
 
 ## Contact
