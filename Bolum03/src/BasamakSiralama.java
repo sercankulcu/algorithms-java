@@ -4,17 +4,11 @@ import java.util.Arrays;
 // kararli saymali siralama. d basamak icin Theta(d (n + 10)).
 public class BasamakSiralama {
 
-	static int enBuyuk(int[] dizi) {
-		int maks = dizi[0];
-		for (int x : dizi)
-			if (x > maks) maks = x;
-		return maks;
-	}
-
-	static int[] basamakSirala(int[] dizi) {
-		int maks = enBuyuk(dizi);
-		for (int us = 1; maks / us > 0; us *= 10)
-			dizi = basamagaGoreSay(dizi, us);
+	static int[] basamakSirala(int[] dizi) { // ogeler >= 0
+		if (dizi.length == 0) return dizi;
+		int maks = Arrays.stream(dizi).max().getAsInt();
+		for (long us = 1; maks / us > 0; us *= 10)
+			dizi = basamagaGoreSay(dizi, (int) us);
 		return dizi;
 	}
 

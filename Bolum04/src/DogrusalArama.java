@@ -15,6 +15,7 @@ public class DogrusalArama {
 
 	static int gozcuIleAra(int[] dizi, int n,
 						   int aranan) {
+		if (n == 0) return -1;
 		int sonEleman = dizi[n - 1];
 		dizi[n - 1] = aranan;     // bekci
 		int i = 0;

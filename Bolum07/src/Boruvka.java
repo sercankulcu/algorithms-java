@@ -35,6 +35,7 @@ public class Boruvka {
 				if (enUcuz[k2] == null || e.w < enUcuz[k2].w)
 					enUcuz[k2] = e;
 			}
+			boolean eklendi = false;
 			for (Kenar e : enUcuz) {          // 2) hepsini ekle
 				if (e == null) continue;
 				int k1 = bul(ata, e.u), k2 = bul(ata, e.v);
@@ -42,7 +43,9 @@ public class Boruvka {
 				agac.add(e);
 				ata[k1] = k2;                   // birlestir
 				bilesenSayisi--;
+				eklendi = true;
 			}
+			if (!eklendi) break;  // orman
 		}
 		return agac;
 	}
@@ -59,10 +62,17 @@ public class Boruvka {
 		int toplam = 0;
 		for (Kenar e : agac) toplam += e.w;
 		System.out.println(toplam); // 15  (1. tur 4 kenar, 2. tur BE)
+
+		// Baglantisiz cizge {A-B, C-D}: ikinci turda kenar eklenmez, minimum kapsayan orman doner
+		List<Kenar> orman = new ArrayList<>();
+		orman.add(new Kenar(0, 1, 2));
+		orman.add(new Kenar(2, 3, 5));
+		System.out.println(boruvka(4, orman));   // [AB(2), CD(5)]
 	}
 }
 
 /* Beklenen cikti:
 [AB(1), BC(5), AD(4), EF(2), BE(3)]
 15
+[AB(2), CD(5)]
 */

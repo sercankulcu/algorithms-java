@@ -1,7 +1,7 @@
 // O(2^n) saf ozyinelemeli Fibonacci ve O(n) bellekleme surumu.
 public class Fibonacci {
 
-	static final int N = 90;
+	static final int N = 92;            // long ile en buyuk n
 
 	static long fib(int n) {           // saf ozyineleme
 		if (n <= 1) return n;
@@ -21,6 +21,7 @@ public class Fibonacci {
 		System.out.println(fib(30));          // 832040
 		System.out.println(fibBellek(50));    // 12586269025
 		System.out.println(fibBellek(90));    // 2880067194370816120
+		System.out.println(fibBellek(92));    // 7540113804746346429 (long'a sigan en buyuk F(n))
 	}
 }
 
@@ -29,4 +30,5 @@ public class Fibonacci {
 832040
 12586269025
 2880067194370816120
+7540113804746346429
 */

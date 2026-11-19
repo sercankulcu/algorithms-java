@@ -12,16 +12,16 @@ public class HashArama {
 
 	// Yardimci: dogrusal yoklama ile ekleme (tablo dolu degilken)
 	static void hashEkle(Integer[] tablo, int anahtar) {
-		int m = tablo.length;
-		int indis = anahtar % m;
+		int m = tablo.length;     // m > 0
+		int indis = Math.floorMod(anahtar, m);
 		while (tablo[indis] != null)
 			indis = (indis + 1) % m;
 		tablo[indis] = anahtar;
 	}
 
 	static int hashArama(Integer[] tablo, int anahtar) {
-		int m = tablo.length;
-		int indis = anahtar % m;   // hash
+		int m = tablo.length;     // m > 0
+		int indis = Math.floorMod(anahtar, m);   // hash
 		while (tablo[indis] != null) {
 			if (tablo[indis] == anahtar)
 				return indis;          // bulundu

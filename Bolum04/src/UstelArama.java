@@ -3,6 +3,7 @@
 public class UstelArama {
 
 	static int ustelArama(int[] dizi, int aranan, int n) {
+		if (n == 0) return -1;
 		if (dizi[0] == aranan) return 0;
 		int konum = 1;
 		while (konum < n && dizi[konum] <= aranan)

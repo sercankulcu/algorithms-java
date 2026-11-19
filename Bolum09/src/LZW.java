@@ -47,7 +47,7 @@ public class LZW {
 
 	static String lzwAc(List<Integer> kod) {
 		List<String> sozluk =
-			ilkSozluk();      // 0..255: ASCII
+			ilkSozluk();      // 0..255: bayt degerleri
 		String w = sozluk.get(kod.get(0));
 		StringBuilder s = new StringBuilder(w);
 		for (int i = 1; i < kod.size(); i++) {

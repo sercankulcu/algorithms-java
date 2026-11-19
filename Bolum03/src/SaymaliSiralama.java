@@ -4,15 +4,9 @@ import java.util.Arrays;
 // Theta(n + k) zaman ve bellek (k: en buyuk anahtar); sondan basa gezildigi icin kararli.
 public class SaymaliSiralama {
 
-	static int enBuyuk(int[] dizi) {
-		int maks = dizi[0];
-		for (int x : dizi)
-			if (x > maks) maks = x;
-		return maks;
-	}
-
-	static int[] saymaliSirala(int[] dizi) {
-		int maks = enBuyuk(dizi);
+	static int[] saymaliSirala(int[] dizi) { // ogeler >= 0
+		if (dizi.length == 0) return dizi;
+		int maks = Arrays.stream(dizi).max().getAsInt();
 		int[] sayac = new int[maks + 1];
 		for (int x : dizi) sayac[x]++;
 		for (int i = 1; i <= maks; i++) sayac[i] += sayac[i - 1];

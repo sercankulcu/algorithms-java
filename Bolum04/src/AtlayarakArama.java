@@ -3,7 +3,8 @@
 public class AtlayarakArama {
 
 	static int atlayarakAraBul(int[] dizi, int eleman,
-							   int n) {
+							   int n) { // n <= dizi.length
+		if (n == 0) return -1;
 		int blok = (int) Math.sqrt(n);
 		int atlama = blok, konum = 0;
 		while (dizi[Math.min(atlama, n) - 1] < eleman) {

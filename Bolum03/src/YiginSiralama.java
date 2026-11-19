@@ -21,12 +21,13 @@ public class YiginSiralama {
 	}
 
 	static void yiginlastir(int[] dizi, int n, int i) {
-		int enBuyuk = i, sol = 2 * i + 1, sag = 2 * i + 2;
-		if (sol < n && dizi[sol] > dizi[enBuyuk]) enBuyuk = sol;
-		if (sag < n && dizi[sag] > dizi[enBuyuk]) enBuyuk = sag;
-		if (enBuyuk != i) {
+		while (true) {
+			int enBuyuk = i, sol = 2 * i + 1, sag = 2 * i + 2;
+			if (sol < n && dizi[sol] > dizi[enBuyuk]) enBuyuk = sol;
+			if (sag < n && dizi[sag] > dizi[enBuyuk]) enBuyuk = sag;
+			if (enBuyuk == i) return;          // yerinde
 			takas(dizi, i, enBuyuk);
-			yiginlastir(dizi, n, enBuyuk);
+			i = enBuyuk;                       // asagida sur
 		}
 	}
 

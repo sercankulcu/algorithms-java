@@ -10,7 +10,7 @@ public class OnekSayaci {
 
 	TrieDugumu kok = new TrieDugumu();
 
-	void ekle(String kelime) {
+	void ekle(String kelime) { if (ara(kelime)) return;
 		TrieDugumu d = kok;
 		d.gecen++;
 		for (char ch : kelime.toCharArray()) {
@@ -20,6 +20,16 @@ public class OnekSayaci {
 			d.gecen++;          // bir kelime daha gecti
 		}
 		d.kelimeSonu = true;
+	}
+
+	// Ayni kelime iki kez eklenirse sayaclar sismesin diye ekle once ara'yi cagirir
+	boolean ara(String kelime) {
+		TrieDugumu d = kok;
+		for (char ch : kelime.toCharArray()) {
+			d = d.cocuk[ch - 'a'];
+			if (d == null) return false;
+		}
+		return d.kelimeSonu;
 	}
 
 	int onekSayisi(String onek) {
@@ -38,6 +48,8 @@ public class OnekSayaci {
 		System.out.println(t.onekSayisi("an"));  // 2
 		System.out.println(t.onekSayisi("da"));  // 1
 		System.out.println(t.onekSayisi("x"));   // 0
+		t.ekle("ant");                           // zaten var: sayaclar degismez
+		System.out.println(t.onekSayisi("an"));  // 2
 	}
 }
 
@@ -46,4 +58,5 @@ public class OnekSayaci {
 2
 1
 0
+2
 */

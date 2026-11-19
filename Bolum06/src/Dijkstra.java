@@ -45,7 +45,11 @@ public class Dijkstra {
 		sonUzaklik = uzaklik; sonOnceki = onceki;   // eklendi
 	}
 
-	static void yolYaz(int[] onceki, int kaynak, int hedef) {
+	static void yolYaz(int[] onceki, int[] uzaklik,
+					   int kaynak, int hedef) {
+		if (uzaklik[hedef] == SONSUZ) {   // ulasilamaz
+			System.out.print("yol yok"); return;
+		}
 		Deque<Integer> yigin = new ArrayDeque<>();
 		for (int v = hedef; v != kaynak; v = onceki[v])
 			yigin.push(v);         // hedeften geriye
@@ -74,7 +78,7 @@ public class Dijkstra {
 		// [6, 3, 3, 2, 0]
 		System.out.println(Arrays.toString(Arrays.copyOfRange(sonOnceki, 1, 6)));
 		// [2, 4, 4, 5, 0]  (kaynagin oncekisi yok: 0)
-		yolYaz(sonOnceki, 5, 1);
+		yolYaz(sonOnceki, sonUzaklik, 5, 1);
 		System.out.println();   // 5 4 2 1
 
 		// Ornek 1: yonsuz cizge, kaynak 1
@@ -84,8 +88,14 @@ public class Dijkstra {
 		dijkstra(1);
 		System.out.println(Arrays.toString(Arrays.copyOfRange(sonUzaklik, 1, 7)));
 		// [0, 7, 9, 20, 20, 11]
-		yolYaz(sonOnceki, 1, 5);
+		yolYaz(sonOnceki, sonUzaklik, 1, 5);
 		System.out.println();   // 1 3 6 5
+
+		// Ulasilamayan hedef: 3 dugumlu yonlu cizgede 3'e giden kenar yok
+		cizgeKur(3, new int[][] { {1, 2, 4} }, false);
+		dijkstra(1);
+		yolYaz(sonOnceki, sonUzaklik, 1, 3);
+		System.out.println();   // yol yok
 	}
 }
 
@@ -95,4 +105,5 @@ public class Dijkstra {
 5 4 2 1
 [0, 7, 9, 20, 20, 11]
 1 3 6 5
+yol yok
 */

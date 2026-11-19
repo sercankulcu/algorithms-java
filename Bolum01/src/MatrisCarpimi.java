@@ -4,6 +4,8 @@ import java.util.Arrays;
 public class MatrisCarpimi {
 
 	static int[][] matrisCarp(int[][] A, int[][] B) {
+		if (B.length == 0 || (A.length > 0 && A[0].length != B.length))
+			throw new IllegalArgumentException("boyut");
 		int n = A.length, m = B[0].length, p = B.length;
 		int[][] sonuc = new int[n][m];
 		for (int i = 0; i < n; i++)

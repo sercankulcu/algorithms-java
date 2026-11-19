@@ -8,8 +8,8 @@ public class AraDegerArama {
 		while (bas <= son && aranan >= dizi[bas]
 						  && aranan <= dizi[son]) {
 			if (dizi[son] == dizi[bas]) return bas; // 0'a bolme
-			int pay = (aranan - dizi[bas]) * (son - bas);
-			int indis = bas + pay / (dizi[son] - dizi[bas]);
+			long pay = (long) (aranan - dizi[bas]) * (son - bas);
+			int indis = bas + (int) (pay / (dizi[son] - dizi[bas]));
 			if (dizi[indis] == aranan) return indis;
 			if (dizi[indis] < aranan) bas = indis + 1;
 			else son = indis - 1;
