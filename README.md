@@ -4,6 +4,8 @@ Java code examples for the undergraduate **Algorithms (Algoritmalar)** course at
 
 Course page and slides: <https://sercankulcu.github.io/teaching/algorithms>
 
+The same programs with English identifiers, comments and output, matching the English edition of the course, are in [algorithms-java-en](https://github.com/sercankulcu/algorithms-java-en).
+
 The course continues in **Advanced Algorithms (İleri Algoritmalar)**: divide and conquer, greedy algorithms, dynamic programming, backtracking, branch and bound, approximation, randomized, online and parallel algorithms. Its code is in [advanced-algorithms-java](https://github.com/sercankulcu/advanced-algorithms-java).
 
 ## Chapters
